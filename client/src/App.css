@@ -20,13 +20,15 @@
   align-items: center;
 }
 
-.swiper--overlay::after {
+.swiper--overlay {
   content: "";
-  position: absolute;
+  /* display: inline-block; */
+  /* position: absolute; */
   top: 0;
   left: 0;
-  width: 200px;
-  height: 1000px;
+  /* width: 200px; */
+  /* height: 100%; */
+  /* background-color: red; */
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -80,4 +82,9 @@
   background-color: rgb(74, 222, 128);
   width: 20px;
   border-radius: 10px;
+  bottom: 10px;
+}
+
+.swiper-pagination {
+  top: 90%;
 }
