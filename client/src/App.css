@@ -39,24 +39,6 @@
   object-fit: cover;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  background-image: url("./angle-down.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
-  z-index: 30 !important;
-  margin-right: 20px;
-  margin-left: 20px;
-  /* position: absolute; */
-  /* background-color: rgb(74, 222, 128); */
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
-}
-
 .swiper-button-next::before,
 .swiper-button-prev::before {
   content: "";
@@ -66,6 +48,24 @@
   z-index: 2 !important;
   position: absolute;
   transform: rotate(45deg);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-image: url("./angle-down.svg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  z-index: 30 !important;
+  margin-right: 20px;
+  margin-left: 20px;
+  /* position: absolute; */
+  background-color: rgb(74, 222, 128);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
 
 .swiper-button-next {

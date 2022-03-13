@@ -3,15 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import "swiper/components/effect-coverflow/effect-coverflow";
 import { Pagination, Navigation, Autoplay, EffectCoverflow } from "swiper";
 
 function Home() {
   return (
     <>
       <div className="mt-6 flex items-center justify-between px-10">
-        <h3>EXCLUSIVE GAMES</h3>
-        <h3>
+        <h3 className="text-4xl">EXCLUSIVE GAMES</h3>
+        <h3 className="text-4xl">
           SEE MORE
           <img
             className="ml-3 inline-block w-5 -rotate-90 cursor-pointer"
@@ -38,11 +37,11 @@ function Home() {
           delay: 2500,
         }}
         coverflowEffect={{
-          rotate: 20, // slide rotation degree
-          stretch: 25, // stretches the space between the slides in px
-          depth: 250, // offsets the depth of neighboring slides
-          modifier: 1, // effect multiplier
-          slideShadows: false, // disables the shadow around the slide container
+          rotate: 5, // slide rotation degree
+          stretch: 20, // stretches the space between the slides in px
+          depth: 200, // offsets the depth of neighboring slides
+          modifier: 1, // effe ct multiplier
+          slideShadows: true, // disables the shadow around the slide container
         }}
         breakpoints={{
           700: {
