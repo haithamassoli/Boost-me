@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Rajdhani", sans-serif;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper--overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 1000px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-image: url("./angle-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  z-index: 30 !important;
+  margin-right: 20px;
+  margin-left: 20px;
+  /* position: absolute; */
+  /* background-color: rgb(74, 222, 128); */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next::before,
+.swiper-button-prev::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: rgb(74, 222, 128);
+  z-index: 2 !important;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.swiper-button-next {
+  transform: rotate(-90deg);
+  position: absolute;
+  z-index: 10;
+}
+.swiper-button-prev {
+  transform: rotate(90deg);
+  z-index: 10 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgb(74, 222, 128);
+  width: 20px;
+  border-radius: 10px;
+}
