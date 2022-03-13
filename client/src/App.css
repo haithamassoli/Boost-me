@@ -45,27 +45,22 @@
   width: 50px;
   height: 50px;
   background-color: rgb(74, 222, 128);
-  z-index: 2 !important;
   position: absolute;
   transform: rotate(45deg);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  background-image: url("./angle-down.svg") !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
-  z-index: 30 !important;
   margin-right: 20px;
   margin-left: 20px;
-  /* position: absolute; */
   background-color: rgb(74, 222, 128);
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  display: none;
+  background-image: url("./angle-down.svg");
+  z-index: 100;
+  color: transparent;
 }
 
 .swiper-button-next {
@@ -75,16 +70,21 @@
 }
 .swiper-button-prev {
   transform: rotate(90deg);
-  z-index: 10 !important;
 }
 
 .swiper-pagination-bullet {
   background-color: rgb(74, 222, 128);
   width: 20px;
   border-radius: 10px;
-  bottom: 10px;
+  margin-top: 100px;
+  position: relative;
+  z-index: 1000;
 }
 
-.swiper-pagination {
-  top: 90%;
+.customized-swiper-pagination {
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
 }
