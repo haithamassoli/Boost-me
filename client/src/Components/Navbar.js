@@ -24,7 +24,7 @@ function Navbar() {
           </div>
         </div>
       )}
-      <nav className="flex items-center justify-center bg-black px-10 py-5 md:justify-between">
+      <nav className="flex items-center justify-center bg-[#11141D] px-10 py-5 md:justify-between">
         <div className="flex  items-center justify-center gap-2 text-white md:gap-5">
           <img
             className="cursor-pointer"
@@ -47,16 +47,16 @@ function Navbar() {
           </div>
         </div>
         <div className="hidden gap-5 md:flex">
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full ring-1 ring-green-400">
+          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
             <i className="fa-brands fa-twitch flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
           </div>
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full ring-1 ring-green-400">
+          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
             <i className="fa-brands fa-discord flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
           </div>
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full ring-1 ring-green-400">
+          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
             <i className="fa-brands fa-twitter flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
           </div>
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full ring-1 ring-green-400">
+          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
             <i className="fa-brands fa-facebook-f flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
           </div>
         </div>
