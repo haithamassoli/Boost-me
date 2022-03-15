@@ -25,7 +25,7 @@ function MobileGames({ system }) {
       </div>
       <div className="mt-5 grid grid-cols-2 px-4 md:grid-cols-3 md:px-20 lg:grid-cols-4  xl:grid-cols-5">
         <div>
-          <div className="flex">
+          <div className="flex cursor-pointer">
             <img
               className="mr-3 h-16 w-16"
               src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
@@ -52,7 +52,7 @@ function MobileGames({ system }) {
           </div>
         </div>
         <div>
-          <div className="flex">
+          <div className="flex cursor-pointer items-center justify-center">
             <img
               className="mr-3 h-16 w-16"
               src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
@@ -79,7 +79,7 @@ function MobileGames({ system }) {
           </div>
         </div>
         <div className="hidden md:block">
-          <div className="flex">
+          <div className="flex cursor-pointer items-center justify-center">
             <img
               className="mr-3 h-16 w-16"
               src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
@@ -106,7 +106,7 @@ function MobileGames({ system }) {
           </div>
         </div>
         <div className="hidden lg:block">
-          <div className="flex">
+          <div className="flex cursor-pointer items-center justify-center">
             <img
               className="mr-3 h-16 w-16"
               src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
@@ -133,7 +133,7 @@ function MobileGames({ system }) {
           </div>
         </div>
         <div className="hidden xl:block">
-          <div className="flex">
+          <div className="flex cursor-pointer items-center justify-center">
             <img
               className="mr-3 h-16 w-16"
               src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"

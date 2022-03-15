@@ -63,6 +63,7 @@ body {
 .swiper-button-next::after,
 .swiper-button-prev::after {
   background-image: url("./angle-down.svg");
+  /* box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.5); */
   z-index: 100;
   color: transparent;
 }
@@ -78,11 +79,14 @@ body {
 
 .swiper-pagination-bullet {
   background-color: rgb(74, 222, 128);
-  width: 20px;
+  width: 15px;
   border-radius: 10px;
   margin-top: 100px;
   position: relative;
   z-index: 1000;
+}
+.swiper-pagination-bullet-active {
+  width: 30px;
 }
 
 .customized-swiper-pagination {

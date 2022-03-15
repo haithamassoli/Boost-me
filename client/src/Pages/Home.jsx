@@ -26,7 +26,7 @@ function Home() {
           // effect="coverflow"
           // slidesOffsetAfter={20}
           // allowSlideNext={true}
-          grabCursor="true"
+          // grabCursor="true"
           centeredSlides="true"
           slidesPerView={2}
           spaceBetween={10}
@@ -57,7 +57,7 @@ function Home() {
           modules={[Pagination, Navigation, Autoplay, EffectCoverflow]}
           className="mySwiper pb-10"
         >
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -73,7 +73,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -89,7 +89,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -105,7 +105,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -121,7 +121,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -137,7 +137,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -153,7 +153,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -169,7 +169,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
@@ -185,7 +185,7 @@ function Home() {
               DAYS GONE
             </h3>
           </SwiperSlide>
-          <SwiperSlide className="group">
+          <SwiperSlide className="group cursor-pointer">
             <h4
               className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
              px-3 py-1 text-sm font-semibold text-white"
