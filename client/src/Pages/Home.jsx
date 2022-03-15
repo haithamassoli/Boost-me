@@ -8,7 +8,7 @@ import MobileGames from "../Components/MobileGames";
 
 function Home() {
   return (
-    <div className="h-screen bg-[#11141D]">
+    <div className=" bg-[#11141D]">
       <div className="mt-6 mb-4 flex items-center justify-between px-10 text-white">
         <h3 className="text-xl md:text-4xl">EXCLUSIVE GAMES</h3>
         <h3 className="flex cursor-pointer items-center text-xl md:text-4xl">
@@ -205,6 +205,46 @@ function Home() {
       </div>
       <MobileGames system="android" />
       <MobileGames system="ios" />
+      <div className="mt-12 grid grid-cols-2 gap-2  px-4 md:grid-cols-4 md:px-20 lg:grid-cols-5">
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className=" transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+          <h3 className="absolute bottom-6 z-10 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+      </div>
+      <button className="m-auto my-10 flex justify-center rounded-tr-3xl rounded-bl-3xl px-10 py-3 text-center ring-2 ring-green-400">
+        LOAD MORE GAMES
+      </button>
     </div>
   );
 }

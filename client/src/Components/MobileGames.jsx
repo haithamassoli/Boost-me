@@ -8,7 +8,7 @@ function MobileGames({ system }) {
           {system === "ios" ? (
             <i className="fa-brands fa-apple mr-2"></i>
           ) : (
-            <i class="fa-brands fa-android mr-2"></i>
+            <i className="fa-brands fa-android mr-2"></i>
           )}
           {system === "ios" ? "Apple " : "Android "}
           Games
@@ -36,16 +36,16 @@ function MobileGames({ system }) {
               <p>ACTION</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
                 </div>
                 {system === "ios" ? (
                   <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
                 ) : (
-                  <i class="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
+                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
                 )}
               </div>
             </div>
@@ -63,16 +63,16 @@ function MobileGames({ system }) {
               <p>ACTION</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
                 </div>
                 {system === "ios" ? (
                   <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
                 ) : (
-                  <i class="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
+                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
                 )}
               </div>
             </div>
@@ -90,16 +90,16 @@ function MobileGames({ system }) {
               <p>ACTION</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
                 </div>
                 {system === "ios" ? (
                   <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
                 ) : (
-                  <i class="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
+                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
                 )}
               </div>
             </div>
@@ -117,16 +117,16 @@ function MobileGames({ system }) {
               <p>ACTION</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
                 </div>
                 {system === "ios" ? (
                   <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
                 ) : (
-                  <i class="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
+                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
                 )}
               </div>
             </div>
@@ -144,16 +144,16 @@ function MobileGames({ system }) {
               <p>ACTION</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
                 </div>
                 {system === "ios" ? (
                   <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
                 ) : (
-                  <i class="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
+                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
                 )}
               </div>
             </div>

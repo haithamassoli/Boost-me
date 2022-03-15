@@ -3,12 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className="mb-5 flex flex-col items-center justify-center gap-5">
-      <img
-        className="cursor-pointer"
-        src="/assets/ESPORTS-TEAM-01.png"
-        width={70}
-        alt="logo"
-      />
+      <img src="/assets/ESPORTS-TEAM-01.png" width={70} alt="logo" />
       <h5 className="text-xl font-semibold">
         All RIGHT RESERVED TO <span className="text-green-400">BOOST ME</span>
       </h5>
