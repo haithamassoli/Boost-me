@@ -100,3 +100,9 @@ body {
 * {
   transition: all 0.3s ease-in-out;
 }
+
+.info::after:hover {
+  background-color: rgb(74, 222, 128);
+  color: white;
+  width: 100px;
+}

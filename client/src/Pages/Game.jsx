@@ -1,9 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
+import "../App.css";
 import { Pagination, Navigation, Autoplay, EffectCoverflow } from "swiper";
 
 function Game() {
@@ -127,7 +125,7 @@ function Game() {
                             border-[#232b46]
                             after:absolute after:top-1 after:left-[75px]
                             after:text-[15px]
-                            after:text-[#979aae] after:content-['CurrentDivision']"
+                            after:text-[#979aae] after:content-['Current-Division']"
                 >
                   <img
                     className="h-[60px] border-r-2 border-[#232b46] object-contain p-2"
@@ -151,10 +149,14 @@ function Game() {
                   </select>
                 </div>
                 <div
-                  className="mt-5 flex w-full items-center justify-evenly rounded-lg
-                            border-2
-                            border-solid
-                            border-[#232b46]"
+                  className="relative mt-5 flex w-full items-center justify-evenly
+                     rounded-lg
+                     border-2
+                     border-solid
+                     border-[#232b46]
+                     after:absolute after:top-1 after:left-[75px]
+                     after:text-[15px]
+                     after:text-[#979aae] after:content-['Current-Division']"
                 >
                   <img
                     className="h-[60px] border-r-2 border-[#232b46] object-contain p-2"
@@ -162,13 +164,9 @@ function Game() {
                     alt=""
                   />
                   <select
-                    className="form-select focus:text-white-700 w-full 
-                            cursor-pointer
-                          bg-[#080F28]
-                            px-4 py-2
-                            font-normal
-                            text-white
-                            focus:border-green-300 focus:outline-none"
+                    className="form-select focus:text-white-700 w-full cursor-pointer bg-[#080F28] px-4 py-5 pb-2 font-normal
+                    text-white
+                    focus:border-green-300 focus:outline-none"
                   >
                     <option value="1">Bronze |</option>
                     <option value="2">Bronze ||</option>
@@ -184,10 +182,39 @@ function Game() {
               </div>
               <div className="mt-5 grid grid-cols-1 items-center justify-center gap-3 lg:grid-cols-2">
                 <label
-                  className="form-check-label group relative inline-block text-white after:absolute after:top-0 after:right-0 after:flex after:h-5 after:w-1 after:items-center after:justify-center after:rounded-tr-md after:rounded-bl-md after:border-2 after:border-green-500/20 after:bg-[#3FB9BE] after:px-2 after:text-[13px] after:font-bold after:text-black after:content-['i']"
-                  for="inlineCheckbox1"
+                  className="form-check-label
+                   group relative inline-block
+                    text-white after:absolute
+                    after:top-0 after:right-0
+                    after:flex after:h-5
+                    after:w-1 after:items-center 
+                    after:justify-center after:rounded-tr-md
+                    after:rounded-bl-md
+                    after:border-2
+                    after:border-green-500/20
+                    after:bg-[#3FB9BE] 
+                    after:px-2 after:text-[13px]
+                    after:font-bold 
+                    after:text-black 
+                    after:content-['i']"
+                  htmlFor="inlineCheckbox1"
                 >
-                  <div className="form-check form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 px-2 py-2">
+                  <div className="z-100 absolute -right-44 -top-48 hidden h-48 w-48 rounded-xl bg-black p-5 group-hover:block">
+                    <div>
+                      <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3FB9BE]">
+                        <i className="fa-solid fa-info"></i>
+                      </span>
+                      <h5 className="ml-2 inline font-medium text-[#3FB9BE]">
+                        INFO
+                      </h5>
+                    </div>
+                    <p className="text-sm">
+                      You will not need to share your account credentials with
+                      the booster. Instead, the booster will play together with
+                      you in a shared lobby
+                    </p>
+                  </div>
+                  <div className="form-check form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 py-3 px-2">
                     <input
                       className="form-check-input float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-black bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-green-300 checked:bg-green-300 focus:outline-none"
                       type="checkbox"
@@ -199,9 +226,24 @@ function Game() {
                 </label>
                 <label
                   className="form-check-label group relative inline-block text-white after:absolute after:top-0 after:right-0 after:flex after:h-5 after:w-1 after:items-center after:justify-center after:rounded-tr-md after:rounded-bl-md after:border-2 after:border-green-500/20 after:bg-[#3FB9BE] after:px-2 after:text-[13px] after:font-bold after:text-black after:content-['i']"
-                  for="inlineCheckbox2"
+                  htmlFor="inlineCheckbox2"
                 >
-                  <div className="form-check form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 px-2 py-2">
+                  <div className="z-100 absolute -right-44 -top-48 hidden h-48 w-48 rounded-xl bg-black p-5 group-hover:block">
+                    <div>
+                      <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3FB9BE]">
+                        <i className="fa-solid fa-info"></i>
+                      </span>
+                      <h5 className="ml-2 inline font-medium text-[#3FB9BE]">
+                        INFO
+                      </h5>
+                    </div>
+                    <p className="text-sm">
+                      You will not need to share your account credentials with
+                      the booster. Instead, the booster will play together with
+                      you in a shared lobby
+                    </p>
+                  </div>
+                  <div className="form-check form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 px-2 py-3">
                     <input
                       className="form-check-input float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-black bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-green-300 checked:bg-green-300 focus:outline-none"
                       type="checkbox"
@@ -215,10 +257,25 @@ function Game() {
                   </div>
                 </label>
                 <label
-                  className="form-check-label group relative flex items-center justify-center  text-sm text-white after:absolute after:top-0 after:right-0 after:flex after:h-5 after:w-1 after:items-center after:justify-center after:rounded-tr-md after:rounded-bl-md after:border-2 after:border-green-500/20 after:bg-[#3FB9BE] after:px-2 after:text-[13px] after:font-bold after:text-black after:content-['i']"
-                  for="inlineCheckbox3"
+                  className="form-check-label group relative inline-block text-white after:absolute after:top-0 after:right-0 after:flex after:h-5 after:w-1 after:items-center after:justify-center after:rounded-tr-md after:rounded-bl-md after:border-2 after:border-green-500/20 after:bg-[#3FB9BE] after:px-2 after:text-[13px] after:font-bold after:text-black after:content-['i']"
+                  htmlFor="inlineCheckbox3"
                 >
-                  <div className="form-check  form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 px-2 py-2">
+                  <div className="z-100 absolute -right-44 -top-48 hidden h-48 w-48 rounded-xl bg-black p-5 group-hover:block">
+                    <div>
+                      <span className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3FB9BE]">
+                        <i className="fa-solid fa-info"></i>
+                      </span>
+                      <h5 className="ml-2 inline font-medium text-[#3FB9BE]">
+                        INFO
+                      </h5>
+                    </div>
+                    <p className="text-sm">
+                      You will not need to share your account credentials with
+                      the booster. Instead, the booster will play together with
+                      you in a shared lobby
+                    </p>
+                  </div>
+                  <div className="form-check form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 px-2 py-3">
                     <input
                       className="form-check-input float-left mr-2 mt-[2px] h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-black bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-green-300 checked:bg-green-300 focus:outline-none"
                       type="checkbox"
@@ -232,9 +289,14 @@ function Game() {
                   </div>
                 </label>
               </div>
-              <button className="mt-3 w-full rounded-lg bg-green-300 px-4 py-2 font-semibold text-black">
-                BOOST ME
-              </button>
+              <div className="mt-5  w-full items-center justify-center">
+                <h4 className="mb-2 text-xl font-semibold">
+                  Total Price: <span className="text-[#3FB9BE]">$50.33</span>
+                </h4>
+                <button className="w-full rounded-lg bg-green-300 px-4 py-2 text-2xl font-semibold text-black">
+                  BOOST ME
+                </button>
+              </div>
             </div>
           </div>
         </div>
