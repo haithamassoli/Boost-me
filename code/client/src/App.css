@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Rajdhani", sans-serif;
+}
+
+body {
+  background-color: #11141d;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #11141d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper--overlay {
+  content: "";
+  /* display: inline-block; */
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  /* width: 200px; */
+  /* height: 100%; */
+  /* background-color: red; */
+  /* background: rgba(0, 0, 0, 0.5); */
+}
+
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.swiper-button-next::before,
+.swiper-button-prev::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: rgb(74, 222, 128);
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: rgb(74, 222, 128);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  background-image: url("./angle-down.svg");
+  /* box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.5); */
+  z-index: 100;
+  color: transparent;
+}
+
+.swiper-button-next {
+  transform: rotate(-90deg);
+  position: absolute;
+  z-index: 10;
+}
+.swiper-button-prev {
+  transform: rotate(90deg);
+}
+
+.swiper-pagination-bullet {
+  background-color: rgb(74, 222, 128);
+  width: 15px;
+  border-radius: 10px;
+  margin-top: 100px;
+  position: relative;
+  z-index: 1000;
+}
+.swiper-pagination-bullet-active {
+  width: 30px;
+}
+
+.customized-swiper-pagination {
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
