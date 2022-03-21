@@ -1,15 +1,16 @@
+const express = require("express");
 require("dotenv").config();
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 const cors = require("cors");
-
+const path = require("path");
+import path from "path";
 // MongoDB
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGO_URL, {
   useUnifiedTopology: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
 });
 var db = mongoose.connection;
 
@@ -26,7 +27,7 @@ app.use("/availability", require("./routes/availabilityRoute"));
 app.use("/reserve", require("./routes/reservationRoute"));
 
 db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", _ => {
+db.once("open", (_) => {
   console.log("Connected to DB");
 });
 

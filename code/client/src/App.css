@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 * {
-  font-family: "Rajdhani", sans-serif;
+  /* font-family: "Rajdhani", sans-serif; */
 }
 
 body {
-  background-color: #11141d;
+  /* background-color: #11141d; */
 }
 
 .swiper {

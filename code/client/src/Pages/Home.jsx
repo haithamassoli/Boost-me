@@ -8,8 +8,8 @@ import MobileGames from "../Components/MobileGames";
 
 function Home() {
   return (
-    <div className=" bg-[#11141D]">
-      <div className="mt-6 mb-4 flex items-center justify-between px-10 text-white">
+    <div className="pb-10  bg-[#11141D] ">
+      <div className="pt-6 pb-4 flex items-center justify-between px-10 text-white">
         <h3 className="text-xl md:text-4xl">EXCLUSIVE GAMES</h3>
         <h3 className="flex cursor-pointer items-center text-xl md:text-4xl">
           SEE MORE
@@ -242,7 +242,7 @@ function Home() {
           </h3>
         </div>
       </div>
-      <button className="m-auto my-10 flex justify-center rounded-tr-3xl rounded-bl-3xl px-10 py-3 text-center ring-2 ring-green-400">
+      <button className="m-auto mt-10 flex justify-center rounded-tr-3xl rounded-bl-3xl px-10 py-3 text-center ring-2 ring-green-400">
         LOAD MORE GAMES
       </button>
     </div>

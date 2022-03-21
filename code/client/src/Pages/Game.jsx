@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "../App.css";
 import { Pagination, Navigation, Autoplay, EffectCoverflow } from "swiper";
 
 function Game() {
