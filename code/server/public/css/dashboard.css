@@ -1,0 +1,167 @@
+:root {
+  --light_color: #fef5ed;
+  --green-light: #d3e4cd;
+  --green-middle: #adc2a9;
+  --green-dark: #99a799;
+  --dark: #4b4d4bc0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: rgba(252, 249, 249, 0.479);
+}
+
+span {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+/*Start Navbar*/
+
+.navbar {
+  color: var(--green-dark);
+  background-color: #fff;
+}
+
+.navbar .container-fluid {
+  padding: 0.5rem 5rem;
+}
+
+.navbar button {
+  background-color: var(--green-light);
+}
+
+#logout-btn {
+  text-decoration: none;
+  color: var(--green-dark);
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: 1px solid var(--green-dark);
+}
+
+/*End Navbar*/
+
+/* Start Greeting */
+
+.greeting {
+  background-color: var(--green-light);
+  color: var(--green-dark);
+}
+
+.greeting .container-fluid {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 5rem;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: -100px;
+  box-shadow: 5px 5px 30px rgb(182, 180, 180);
+  width: 70%;
+}
+
+#profileImg img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.user_quizzes_details {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.user_quizzes_details div {
+  padding: 1rem 2rem;
+}
+
+.user_quizzes_details div span {
+  font-weight: bold;
+}
+
+/* End Greeting */
+
+/*Start Popular Section*/
+
+h1 {
+  margin-top: 5rem;
+}
+
+.popular_quizzes {
+  color: var(--dark);
+  margin-top: -30px;
+}
+
+.popular_quizzes .container-fluid {
+  padding: 0.5rem 5rem;
+  text-align: center;
+}
+
+/*End Popular Section*/
+
+/*Start All-Quizzes Section*/
+
+.all_quizzes {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+}
+
+.all_quizzes .card .quiz_details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid gray;
+  padding-top: 0.5rem;
+}
+
+.card img {
+  height: 80%;
+}
+
+.card {
+  height: 60vh;
+}
+
+.all_quizzes .card .quiz_details div {
+  width: 100%;
+  /* padding: 0.6rem 1rem; */
+  font-size: 0.9rem;
+}
+
+.start-btn {
+  padding: 0.3rem 2rem;
+  background-color: var(--green-dark);
+  border: none;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .all_quizzes .card {
+    margin: 3rem;
+  }
+}
+
+@media (min-width: 320px) {
+  .all_quizzes .card {
+    margin-bottom: 2rem;
+  }
+}
+
+footer {
+  text-align: center;
+  background-color: var(--green-dark);
+  padding: 1rem;
+  color: var(--dark);
+}
+
+/*End All-Quizzes Section*/

@@ -31,7 +31,7 @@ function Login() {
                         style={{ transition: "all .15s ease" }}
                       >
                         <img
-                          alt="..."
+                          alt="github"
                           className="mr-1 w-5"
                           src="https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/830f9267ad556745e6fd7857260c020dcd9dacea/Login%20Page/react-login-page/src/assets/img/github.svg"
                         />
@@ -43,7 +43,7 @@ function Login() {
                         style={{ transition: "all .15s ease" }}
                       >
                         <img
-                          alt="..."
+                          alt="google"
                           className="mr-1 w-5"
                           src="https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/830f9267ad556745e6fd7857260c020dcd9dacea/Login%20Page/react-login-page/src/assets/img/google.svg"
                         />
@@ -62,10 +62,26 @@ function Login() {
                           className="mb-2 block text-xs font-bold uppercase text-gray-700"
                           htmlFor="grid-password"
                         >
+                          UserName
+                        </label>
+                        <input
+                          type="text"
+                          name="username"
+                          className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-gray-700 placeholder-gray-400 shadow focus:outline-none focus:ring"
+                          placeholder="UserName"
+                          style={{ transition: "all .15s ease" }}
+                        />
+                      </div>
+                      <div className="relative mb-3 w-full">
+                        <label
+                          className="mb-2 block text-xs font-bold uppercase text-gray-700"
+                          htmlFor="grid-password"
+                        >
                           Email
                         </label>
                         <input
                           type="email"
+                          name="email"
                           className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-gray-700 placeholder-gray-400 shadow focus:outline-none focus:ring"
                           placeholder="Email"
                           style={{ transition: "all .15s ease" }}
@@ -80,6 +96,7 @@ function Login() {
                           Password
                         </label>
                         <input
+                        name="password"
                           type="password"
                           className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-gray-700 placeholder-gray-400 shadow focus:outline-none focus:ring"
                           placeholder="Password"

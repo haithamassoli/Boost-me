@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,7 +25,7 @@ function Navbar() {
         </div>
       )}
       <nav className="flex items-center justify-center bg-[#11141D] px-10 py-5 md:justify-between">
-        <div className="flex  items-center justify-center gap-2 text-white md:gap-5">
+        <div className="flex items-center justify-center gap-2 overflow-x-scroll whitespace-nowrap text-white scrollbar-hide md:gap-5">
           <img
             className="cursor-pointer"
             src="/assets/ESPORTS-TEAM-01.png"
@@ -33,34 +33,42 @@ function Navbar() {
             alt="logo"
             onClick={() => setIsOpen(!isOpen)}
           />
-          <div className="cursor-pointer text-lg font-bold md:text-xl">
-            ACTION
+          <Link to={"/"} className="cursor-pointer font-bold md:text-xl">
+            <i className="fa-solid fa-house-chimney mr-3 text-green-400"></i>
+            HOME
+          </Link>
+          <div className="cursor-pointer  font-bold md:text-xl">
+            TESTIMONIAL
           </div>
-          <div className="cursor-pointer text-lg font-bold md:text-xl">
-            ADVENTURE
-          </div>
-          <div className="cursor-pointer text-lg font-bold md:text-xl">
-            ARCADE
-          </div>
-          <div className="cursor-pointer text-lg font-bold md:text-xl">
-            FIGHTING
-          </div>
+          <div className="cursor-pointer  font-bold md:text-xl">ABOUT US</div>
+          <div className="cursor-pointer  font-bold md:text-xl">DONATE</div>
+          <div className="mr-4 cursor-pointer  font-bold md:text-xl">FAQ</div>
         </div>
         <div className="hidden gap-5 md:flex">
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
-            <i className="fa-brands fa-twitch flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
+          <div className="relative flex items-center justify-end">
+            <input
+              type="text"
+              className="rounded-2xl bg-black focus:border-0 focus:outline-none focus:ring-2 focus:ring-green-400"
+              name="search"
+            />
+            <i className="fa-solid  fa-magnifying-glass absolute mr-3 text-slate-400"></i>
           </div>
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
-            <i className="fa-brands fa-discord flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
-          </div>
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
-            <i className="fa-brands fa-twitter flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
+          <div className="mr-4 flex cursor-pointer items-center justify-center ">
+            <i className="fa-solid  fa-user mr-3"></i>
+            <a href="http://localhost:8000/login">SIGN IN</a>
           </div>
           <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
             <i className="fa-brands fa-facebook-f flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
           </div>
         </div>
       </nav>
+      <header className="flex w-full items-center gap-5 overflow-x-scroll bg-green-300 px-2 py-2 font-semibold text-black scrollbar-hide md:justify-start md:px-16">
+        <div className="ml-3 cursor-pointer md:px-0">ACTION</div>
+        <div className="cursor-pointer">FIGHTING</div>
+        <div className="cursor-pointer">ARCADE</div>
+        <div className="cursor-pointer">ADVENTURE</div>
+        <div className="mr-3 cursor-pointer md:px-0">CASUAL</div>
+      </header>
     </>
   );
 }

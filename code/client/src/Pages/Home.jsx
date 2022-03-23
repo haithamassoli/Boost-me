@@ -233,6 +233,240 @@ function Home() {
             }}
           ></div>
           <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
+            className="z-10 transition-opacity duration-500 group-hover:opacity-75"
+            src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
+            alt="SIFU"
+          />
+
+          <h3 className="absolute bottom-6 left-auto z-40 w-full text-center text-xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+            DAYS GONE
+          </h3>
+        </div>
+        <div className="group relative cursor-pointer">
+          <div
+            className="absolute bottom-0 left-0 h-44 w-full "
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(107,107,107,0) 100%)",
+            }}
+          ></div>
+          <img
             className=" transition-opacity duration-500 group-hover:opacity-75"
             src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_S4_1200x1600-32aca69d756abfcc25f8581942a6162b_1200x1600-32aca69d756abfcc25f8581942a6162b?h=854&resize=1&w=640"
             alt="SIFU"
