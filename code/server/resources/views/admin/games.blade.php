@@ -36,9 +36,14 @@ $pageName = 'Manage Games';
                             <tr>
                                 <th>#</th>
                                 <th>Game Name</th>
-                                <th>Quiz Descreption</th>
-                                <th>Number of Questions</th>
-                                <th>Image</th>
+                                <th>Category</th>
+                                <th>Tags</th>
+                                <th>Price</th>
+                                <th>Discount</th>
+                                <th>Current Division</th>
+                                <th>Desired Division</th>
+                                <th>Cover Image</th>
+                                <th>Images</th>
                                 <th>Adjustments</th>
                             </tr>
                         </thead>
@@ -46,16 +51,27 @@ $pageName = 'Manage Games';
                             @foreach ($games as $game)
                                 <tr>
                                     <td>{{ $game->id }}</td>
-                                    <td>{{ $game->exam_name }}</td>
-                                    <td>{{ $game->exam_desc }}</td>
-                                    <td>{{ $game->exam_num_qus }}</td>
+                                    <td><div class="d-flex align-items-center"><img  class="avatar me-2" style="object-fit: cover" width="50" height="50" src="{{$game->cover_image}}" alt="{{$game->name}}">{{ $game->name }}</div></td>
+                                    <td>{{ $game->category }}</td>
+                                    <td>{{ $game->tags }}</td>
+                                    <td>${{ $game->price }}</td>
+                                    <td>${{ $game->discount }}</td>
+                                    <td>{{ $game->currentDivision }}</td>
+                                    <td>{{ $game->desiredDivision }}</td>
                                     <td>
-                                        <img class="avatar me-2" style="object-fit: cover" width="50" height="50"
-                                            src="{{ asset("img/$game->exam_img") }}" alt="profile_photo">
+                                        <img src={{$game->cover_image}} alt={{$game->name}}>
                                     </td>
                                     <td>
-                                        <a href="{{ route('admin.games.show', $game->id) }}"><i
-                                                class="far fa-eye"></i></a>
+                                        <div class="d-flex align-items-center"> 
+                                        @foreach ( explode(",",$game->images) as $index => $image)
+                                        @if ($index == 3)
+                                            @break
+                                        @endif
+                                        <img  class="avatar me-2" style="object-fit: cover" width="50" height="50" src="{{$image}}" alt="{{$image}}">
+                                        @endforeach
+                                    </div>   
+                                    </td>
+                                    <td>
                                         <a href="{{ route('admin.games.edit', $game->id) }}" class="ms-3 ">
                                             <i class="fas fa-cog"></i>
                                         </a>

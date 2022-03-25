@@ -39,16 +39,12 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'exam_name' => 'required',
-            'exam_desc' => 'required',
-            'exam_num_qus' => 'required|integer',
-            'exam_img' => 'mimes:jpg,png,jpeg|max:5048'
+            'name' => 'required',
         ]);
 
         $category = Category::create([
-            'exam_name' => $request->input('exam_name'),
-            'exam_desc' => $request->input('exam_desc'),
-            'exam_num_qus' => $request->input('exam_num_qus'),
+            'name' => $request->input('name'),
+
         ]);
         return redirect('admin/categories')->with('success', 'Added successfully');
     }
@@ -73,7 +69,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view('admin.edit_category', compact('category'));
+        return view('admin.category_edit', compact('category'));
     }
 
     /**
@@ -86,17 +82,13 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'exam_name' => 'required',
-            'exam_desc' => 'required',
-            'exam_num_qus' => 'required|integer',
-            'exam_img' => 'mimes:jpg,png,jpeg|max:5048'
+            'name' => 'required',
         ]);
 
         $Category = Category::where('id', $id)
             ->update([
-                'exam_name' => $request->input('exam_name'),
-                'exam_desc' => $request->input('exam_desc'),
-                'exam_num_qus' => $request->input('exam_num_qus'),
+                'name' => $request->input('name'),
+
             ]);
         return redirect('admin/categories')->with('success', 'Updated successfully');
     }

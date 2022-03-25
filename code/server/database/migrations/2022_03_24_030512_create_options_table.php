@@ -13,18 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('options', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->longText('cover_image');
-            $table->longText('main_image');
-            $table->longText('images');
-            $table->string('category');
-            $table->longText('tags');
+            $table->string('option');
             $table->integer('price');
-            $table->integer('discount')->default(0);
-            $table->string('currentDivision');
-            $table->string('desiredDivision');
+            $table->string('tags')->nullable();
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -36,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('options');
     }
 };

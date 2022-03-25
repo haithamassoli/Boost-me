@@ -1,8 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
+
 function Navbar() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
+  const logout = () => {
+    axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/api/logout",
+      headers: {
+        Authorization: `Bearer ${Cookies.get("auth")}`,
+      },
+    })
+      .then((res) => {
+        console.log(res.data);
+        Cookies.remove("auth");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       {isOpen && (
@@ -25,7 +46,7 @@ function Navbar() {
         </div>
       )}
       <nav className="flex items-center justify-center bg-[#11141D] px-10 py-5 md:justify-between">
-        <div className="flex items-center justify-center gap-2 overflow-x-scroll whitespace-nowrap text-white scrollbar-hide md:gap-5">
+        <div className="flex items-center justify-center gap-2 overflow-x-scroll whitespace-nowrap text-white scrollbar-hide md:gap-3">
           <img
             className="cursor-pointer"
             src="/assets/ESPORTS-TEAM-01.png"
@@ -33,16 +54,14 @@ function Navbar() {
             alt="logo"
             onClick={() => setIsOpen(!isOpen)}
           />
-          <Link to={"/"} className="cursor-pointer font-bold md:text-xl">
-            <i className="fa-solid fa-house-chimney mr-3 text-green-400"></i>
+          <Link to={"/"} className="cursor-pointer font-bold">
+            <i className="fa-solid fa-house-chimney mr-1 text-green-400"></i>
             HOME
           </Link>
-          <div className="cursor-pointer  font-bold md:text-xl">
-            TESTIMONIAL
-          </div>
-          <div className="cursor-pointer  font-bold md:text-xl">ABOUT US</div>
-          <div className="cursor-pointer  font-bold md:text-xl">DONATE</div>
-          <div className="mr-4 cursor-pointer  font-bold md:text-xl">FAQ</div>
+          <div className="cursor-pointer  font-bold">TESTIMONIAL</div>
+          <div className="cursor-pointer  font-bold">ABOUT US</div>
+          <div className="cursor-pointer  font-bold">DONATE</div>
+          <div className="mr-4 cursor-pointer  font-bold">FAQ</div>
         </div>
         <div className="hidden gap-5 md:flex">
           <div className="relative flex items-center justify-end">
@@ -55,7 +74,10 @@ function Navbar() {
           </div>
           <div className="mr-4 flex cursor-pointer items-center justify-center ">
             <i className="fa-solid  fa-user mr-3"></i>
-            <a href="http://localhost:8000/login">SIGN IN</a>
+            <Link to={"/login"}>SIGN IN</Link>
+            <div className="ml-3" onClick={logout}>
+              LOGOUT
+            </div>
           </div>
           <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
             <i className="fa-brands fa-facebook-f flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>

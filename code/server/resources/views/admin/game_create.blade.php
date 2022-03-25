@@ -1,5 +1,5 @@
 @php
-$pageName = 'Manage Exams';
+$pageName = 'Manage Games';
 @endphp
 @extends('admin.layouts.admin')
 @section('content')
@@ -12,11 +12,11 @@ $pageName = 'Manage Exams';
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Add Quiz</h4>
+                <h4 class="card-title">Add Game</h4>
             </div>
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form form-vertical" method="POST" action="{{ route('admin.exams.store') }}"
+                    <form class="form form-vertical" method="POST" action="{{ route('admin.games.store') }}"
                         enctype="multipart/form-data">
                         @csrf
                         @include('alerts.fail')
@@ -24,9 +24,9 @@ $pageName = 'Manage Exams';
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="first-name-icon">Quiz Name</label>
+                                        <label for="first-name-icon">Game Name</label>
                                         <div class="position-relative">
-                                            <input type="text" name="exam_name" class="form-control" placeholder="Name"
+                                            <input type="text" name="name" class="form-control" placeholder="Name"
                                                 id="first-name-icon">
                                             <div class="form-control-icon">
                                                 <i class="fas fa-book"></i>
@@ -36,9 +36,60 @@ $pageName = 'Manage Exams';
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="email-id-icon">Quiz Descreption</label>
+                                        <label for="first-name-icon">Main Image</label>
                                         <div class="position-relative">
-                                            <input type="text" name="exam_desc" class="form-control"
+                                            <input type="text" name="main_image" class="form-control" placeholder="Name"
+                                                id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">Cover Image</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="cover_image" class="form-control" placeholder="cover_image"
+                                                id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">Images for Game</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="images" class="form-control" placeholder="Name"
+                                                id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">Category</label>
+                                        <div class="position-relative">
+                                            <select name="category" class="form-select form-control">
+                                                @foreach ($categories as $category)
+                                                <option value="{{$category->name}}">{{$category->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="email-id-icon">Tags</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="tags" class="form-control"
                                                 placeholder="Descreption" id="email-id-icon">
                                             <div class="form-control-icon">
                                                 <i class="fas fa-pencil-alt"></i>
@@ -48,78 +99,49 @@ $pageName = 'Manage Exams';
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="password-id-icon">Number of Questions</label>
+                                        <label for="email-id-icon">Current Division</label>
                                         <div class="position-relative">
-                                            <input type="number" value={{ $exam_num_qus }} name="exam_num_qus"
-                                                class="form-control" placeholder="Number of Questions"
-                                                id="password-id-icon">
+                                            <input type="text" name="currentDivision" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
                                             <div class="form-control-icon">
-                                                <i class="fas fa-th"></i>
+                                                <i class="fas fa-pencil-alt"></i>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                @php $counter=1; @endphp
-                                @for ($i = 0; $i < $exam_num_qus; $i++)
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Question {{ $counter }} Point</label>
-                                            <div class="position-relative">
-                                                <input type="text" name="question_point{{ $counter }}"
-                                                    class="form-control" placeholder="Question Point" id="email-id-icon">
-                                                <div class="form-control-icon">
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Question {{ $counter }}</label>
-                                            <div class="position-relative">
-                                                <textarea class="ckeditor" name="question_content{{ $counter }}"
-                                                    id="editor"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Question {{ $counter }} Options</label>
-                                            <div class="position-relative">
-                                                <input type="text" name="question_options{{ $counter }}"
-                                                    class="form-control" placeholder="split it with ," id="email-id-icon">
-                                                <div class="form-control-icon">
-                                                    <i class="fas fa-cogs"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Correct Answer {{ $counter }}</label>
-                                            <div class="position-relative">
-                                                <input type="text" name="correct_answer{{ $counter }}"
-                                                    class="form-control" placeholder="Correct Answer" id="email-id-icon">
-                                                <div class="form-control-icon">
-                                                    <i class="fas fa-check"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @php $counter++; @endphp
-                                    <div
-                                        style="height: 10px; background-color:rgba(67,94,190,0.5); width:100%; margin:30px 0">
-                                    </div>
-                                @endfor
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="password-id-icon">Image</label>
+                                        <label for="email-id-icon">Desired Division</label>
                                         <div class="position-relative">
-                                            <label for="image">
-                                                <img src="{{ asset('img/Add_Image_icon.png') }}" alt="profile_photo"
-                                                    style="cursor: pointer">
-                                                <input type="file" id="image" name="exam_img" class="form-control d-none">
-                                            </label>
+                                            <input type="text" name="desiredDivision" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="email-id-icon">Price</label>
+                                        <div class="position-relative">
+                                            <input type="number" name="price" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="email-id-icon">Discount</label>
+                                        <div class="position-relative">
+                                            <input type="number" name="discount" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -18,6 +18,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('exam/create', [App\Http\Controllers\api\showExamController::class, 'create']);
-Route::post('exam/done', [App\Http\Controllers\api\showExamController::class, 'done']);
-Route::get('exam/{id}', [App\Http\Controllers\api\showExamController::class, 'index']);
+Route::post('exam/create', [App\Http\Controllers\api\GamesController::class, 'create']);
+Route::post('exam/done', [App\Http\Controllers\api\GamesController::class, 'done']);
+Route::get('games', [App\Http\Controllers\api\GamesController::class, 'index']);
+Route::get('option', [App\Http\Controllers\api\GamesController::class, 'getOption']);
+Route::get('game/{id}', [App\Http\Controllers\api\GamesController::class, 'show']);
+Route::post('signup', [App\Http\Controllers\api\AuthController::class, 'signup']);
+Route::post('login', [App\Http\Controllers\api\AuthController::class, 'login']);
+
+
+Route::group(["middleware" => ["auth:sanctum"]], function(){
+    Route::post('logout', [App\Http\Controllers\api\AuthController::class, 'logout']);
+   
+});

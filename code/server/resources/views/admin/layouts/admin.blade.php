@@ -57,14 +57,14 @@
                                 <span>Games</span>
                             </a>
                         </li>
-                        <li class="sidebar-item @if ($pageName == 'Manage Orders') active @endif">
-                            <a href="/admin/orders" class='sidebar-link'>
+                        <li class="sidebar-item @if ($pageName == 'Manage Categories') active @endif">
+                            <a href="/admin/categories" class='sidebar-link'>
                                 <i class="fas fa-clipboard-list"></i>
-                                <span>Orders</span>
+                                <span>Categories</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/dashboard" class='sidebar-link'>
+                            <a href="http://127.0.0.1:3000/" class='sidebar-link'>
                                 <i class="fas fa-clipboard-list"></i>
                                 <span>Dashboard</span>
                             </a>

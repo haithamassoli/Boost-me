@@ -27,8 +27,10 @@ return [
 
     'exposed_headers' => [],
 
+    'allowed_origins_patterns' => ['*'],
+
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];

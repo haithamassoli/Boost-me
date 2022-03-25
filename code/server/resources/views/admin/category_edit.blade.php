@@ -14,13 +14,14 @@ $pageName = 'Manage Categories';
                         action="{{ route('admin.categories.update', $category->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('put')
+                        @include('alerts.fail')
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group has-icon-left">
                                         <label for="first-name-icon">Name</label>
                                         <div class="position-relative">
-                                            <input type="text" name="exam_name" value="{{ $category->category_name }}"
+                                            <input type="text" name="name" value="{{ $category->name }}"
                                                 class="form-control" placeholder="Name" id="first-name-icon">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>

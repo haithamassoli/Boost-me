@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
+function getWindowDimensions() {
+  const { innerWidth: width } = window;
+  return {
+    width,
+  };
+}
 function MobileGames({ system }) {
+  const [games, setGames] = useState([]);
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8000/api/games/").then((res) => {
+      const systemGame = res.data.filter((game) => {
+        return game.category === system;
+      });
+      setGames(systemGame);
+    });
+  }, []);
   return (
     <div className="mt-4">
       <div className="flex items-center justify-between px-2 text-xl font-semibold text-white md:px-10">
@@ -24,141 +53,45 @@ function MobileGames({ system }) {
         </h4>
       </div>
       <div className="mt-5 grid grid-cols-2 px-4 md:grid-cols-3 md:px-20 lg:grid-cols-4  xl:grid-cols-5">
-        <div>
-          <div className="flex cursor-pointer">
-            <img
-              className="mr-3 h-16 w-16"
-              src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
-              alt="game"
-            />
-            <div>
-              <h5>TEMPLE RUN 2</h5>
-              <p>ACTION</p>
-              <div className="flex items-center justify-between">
+        {games
+          .slice(
+            windowDimensions >= 1000
+              ? (0, 5)
+              : windowDimensions >= 600
+              ? (0, 4)
+              : windowDimensions >= 400
+              ? (0, 3)
+              : (0, 2)
+          )
+          .map((game) => {
+            <div key={game.id}>
+              <div className="flex cursor-pointer">
+                <img
+                  className="mr-3 h-16 w-16"
+                  src={game.cover_image}
+                  alt={game.name}
+                />
                 <div>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
+                  <h5>{game.name}</h5>
+                  <p>{game.tags}</p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <i className="fa-regular fa-star"></i>
+                      <i className="fa-regular fa-star"></i>
+                      <i className="fa-regular fa-star"></i>
+                      <i className="fa-regular fa-star"></i>
+                      <i className="fa-regular fa-star"></i>
+                    </div>
+                    {system === "ios" ? (
+                      <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
+                    ) : (
+                      <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
+                    )}
+                  </div>
                 </div>
-                {system === "ios" ? (
-                  <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
-                ) : (
-                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
-                )}
               </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div className="flex cursor-pointer items-center justify-center">
-            <img
-              className="mr-3 h-16 w-16"
-              src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
-              alt="game"
-            />
-            <div>
-              <h5>TEMPLE RUN 2</h5>
-              <p>ACTION</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                </div>
-                {system === "ios" ? (
-                  <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
-                ) : (
-                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="hidden md:block">
-          <div className="flex cursor-pointer items-center justify-center">
-            <img
-              className="mr-3 h-16 w-16"
-              src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
-              alt="game"
-            />
-            <div>
-              <h5>TEMPLE RUN 2</h5>
-              <p>ACTION</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                </div>
-                {system === "ios" ? (
-                  <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
-                ) : (
-                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="hidden lg:block">
-          <div className="flex cursor-pointer items-center justify-center">
-            <img
-              className="mr-3 h-16 w-16"
-              src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
-              alt="game"
-            />
-            <div>
-              <h5>TEMPLE RUN 2</h5>
-              <p>ACTION</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                </div>
-                {system === "ios" ? (
-                  <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
-                ) : (
-                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="hidden xl:block">
-          <div className="flex cursor-pointer items-center justify-center">
-            <img
-              className="mr-3 h-16 w-16"
-              src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f4b3ac7fe25cad9bc028b33f7a407f28.png"
-              alt="game"
-            />
-            <div>
-              <h5>TEMPLE RUN 2</h5>
-              <p>ACTION</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                </div>
-                {system === "ios" ? (
-                  <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
-                ) : (
-                  <i className="fa-brands fa-android ml-3 mr-2 text-green-400"></i>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+            </div>;
+          })}
       </div>
     </div>
   );

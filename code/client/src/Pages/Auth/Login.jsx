@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 function Login() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    if (formData.email && formData.password) {
+      axios({
+        method: "post",
+        url: "http://127.0.0.1:8000/api/login",
+        data: formData,
+      })
+        .then((res) => {
+          console.log(res.data);
+          Cookies.set("auth", res.data.token, { expires: 30 });
+          navigate("/");
+        })
+        .catch((err) => console.log(err));
+    }
+  };
+
   return (
     <>
       <main>
@@ -56,22 +82,7 @@ function Login() {
                     <div className="mb-3 text-center font-bold text-gray-500">
                       <small>Or sign in with credentials</small>
                     </div>
-                    <form>
-                      <div className="relative mb-3 w-full">
-                        <label
-                          className="mb-2 block text-xs font-bold uppercase text-gray-700"
-                          htmlFor="grid-password"
-                        >
-                          UserName
-                        </label>
-                        <input
-                          type="text"
-                          name="username"
-                          className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-gray-700 placeholder-gray-400 shadow focus:outline-none focus:ring"
-                          placeholder="UserName"
-                          style={{ transition: "all .15s ease" }}
-                        />
-                      </div>
+                    <form onSubmit={formSubmit}>
                       <div className="relative mb-3 w-full">
                         <label
                           className="mb-2 block text-xs font-bold uppercase text-gray-700"
@@ -82,6 +93,10 @@ function Login() {
                         <input
                           type="email"
                           name="email"
+                          value={formData.email}
+                          onChange={(e) =>
+                            setFormData({ ...formData, email: e.target.value })
+                          }
                           className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-gray-700 placeholder-gray-400 shadow focus:outline-none focus:ring"
                           placeholder="Email"
                           style={{ transition: "all .15s ease" }}
@@ -96,8 +111,15 @@ function Login() {
                           Password
                         </label>
                         <input
-                        name="password"
+                          name="password"
                           type="password"
+                          value={formData.password}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              password: e.target.value,
+                            })
+                          }
                           className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-gray-700 placeholder-gray-400 shadow focus:outline-none focus:ring"
                           placeholder="Password"
                           style={{ transition: "all .15s ease" }}
@@ -120,33 +142,16 @@ function Login() {
                       <div className="mt-6 text-center">
                         <button
                           className="mr-1 mb-1 w-full rounded bg-gray-900 px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none hover:shadow-lg focus:outline-none active:bg-gray-700"
-                          type="button"
+                          type="submit"
                           style={{ transition: "all .15s ease" }}
                         >
-                          Sign In
+                          Login
                         </button>
                       </div>
+                      <Link to={"/signup"} className="text-black">
+                        Create new account
+                      </Link>
                     </form>
-                  </div>
-                </div>
-                <div className="mt-6 flex flex-wrap">
-                  <div className="w-1/2">
-                    <a
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      className="text-gray-300"
-                    >
-                      <small>Forgot password?</small>
-                    </a>
-                  </div>
-                  <div className="w-1/2 text-right">
-                    <a
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      className="text-gray-300"
-                    >
-                      <small>Create new account</small>
-                    </a>
                   </div>
                 </div>
               </div>

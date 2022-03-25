@@ -7,7 +7,7 @@
 }
 
 body {
-  /* background-color: #11141d; */
+  background-color: #11141d;
 }
 
 .swiper {
@@ -21,7 +21,8 @@ body {
   background: #11141d;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  height: fit-content;
 }
 
 .swiper--overlay {

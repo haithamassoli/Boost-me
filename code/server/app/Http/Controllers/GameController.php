@@ -3,208 +3,99 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\Category;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
+use Illuminate\Http\Request;
+
 
 class GameController extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $games = Game::all();
         return view('admin.games', compact('games'));
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function create(Request $request)
-    // {
-    //     $exam_num_qus = (int)$request->get('exam_num_qus');
-    //     return view('admin.exam_create', compact('exam_num_qus'));
-    // }
+    public function create()
+    {
+        $categories = Category::all();
+        return view('admin.game_create', compact('categories'));
+    }
 
-    // /**
-    //  * Store a newly created resource in storage.
-    //  *
-    //  * @param  \App\Http\Requests\StoreExamRequest  $request
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function store(Request $request)
-    // {
-    //     $counter = 1;
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'cover_image' => 'required',
+            'main_image' => 'required',
+            'images' => 'required',
+            'category' => 'required',
+            'tags' => 'required',
+            'price' => 'required|integer',
+            'discount' => 'required|integer',
+            'currentDivision' => 'required',
+            'desiredDivision' => 'required',
+        ]);
 
-    //     $request->validate([
-    //         'exam_name' => 'required',
-    //         'exam_desc' => 'required',
-    //         'exam_num_qus' => 'required|integer',
-    //         'exam_img' => 'mimes:jpg,png,jpeg|max:5048'
-    //     ]);
+            $game = Game::create([
+                'name' => $request->input('name'),
+                'cover_image' => $request->input('cover_image'),
+                'main_image' => $request->input('main_image'),
+                'images' => $request->input('images'),
+                'category' => $request->input('category'),
+                'price' => $request->input('price'),
+                'tags' => $request->input('tags'),
+                'currentDivision' => $request->input('currentDivision'),
+                'desiredDivision' => $request->input('desiredDivision'),
+            ]);
 
-    //     $exam_num_qus = $request->input('exam_num_qus');
+            return redirect('admin/games')->with('success', 'Added successfully');
+        }
+ 
+    
+    public function edit($id)
+    {
+        $game = Game::findOrFail($id);
+        $categories = Category::all();
+        return view('admin.game_edit', compact(['game', 'categories']));
+    }
 
-    //     if ($request->hasfile('exam_img')) {
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'main_image' => 'required',
+            'cover_image' => 'required',
+            'images' => 'required',
+            'category' => 'required',
+            'tags' => 'required',
+            'price' => 'required|integer',
+            'discount' => 'required|integer',
+            'currentDivision' => 'required',
+            'desiredDivision' => 'required',
+        ]);
 
-    //         $newImageName = time() . '-' . $request->exam_name . '.' . $request->exam_img->extension();
-    //         $request->exam_img->move(public_path('img'), $newImageName);
+            $exam = Game::where('id', $id)
+                ->update([
+                    'name' => $request->input('name'),
+                    'main_image' => $request->input('main_image'),
+                    'cover_image' => $request->input('cover_image'),
+                    'images' => $request->input('images'),
+                    'category' => $request->input('category'),
+                    'tags' => $request->input('tags'),
+                    'price' => $request->input('price'),
+                    'currentDivision' => $request->input('currentDivision'),
+                    'desiredDivision' => $request->input('desiredDivision'),
+                ]);
 
-    //         $exam = Game::create([
-    //             'exam_name' => $request->input('exam_name'),
-    //             'exam_desc' => $request->input('exam_desc'),
-    //             'exam_num_qus' => $request->input('exam_num_qus'),
-    //             'exam_img' => $newImageName,
-    //         ]);
+            return redirect('admin/games')->with('success', 'Updated successfully');
+        
+    }
 
-    //         $id = Game::select('id')
-    //             ->where('exam_name', '=', $request->input('exam_name'))
-    //             ->first();
-    //         $id = $id->id;
-
-    //         for ($i = 0; $i < $exam_num_qus; $i++) {
-    //             $question = Question::create([
-    //                 'question_content' => $request->input("question_content$counter"),
-    //                 'question_point' => $request->input("question_point$counter"),
-    //                 'question_options' => $request->input("question_options$counter"),
-    //                 'correct_answer' => $request->input("correct_answer$counter"),
-    //                 'exam_id' => $id,
-    //             ]);
-    //             $counter++;
-    //         }
-    //         return redirect('admin/exams')->with('success', 'Added successfully');
-    //     } else {
-
-    //         $exam = Exam::create([
-    //             'exam_name' => $request->input('exam_name'),
-    //             'exam_desc' => $request->input('exam_desc'),
-    //             'exam_num_qus' => $request->input('exam_num_qus'),
-    //         ]);
-
-    //         $id = Exam::select('id')
-    //             ->where('exam_name', '=', $request->input('exam_name'))
-    //             ->first();
-
-    //         $id = $id->id;
-
-    //         for ($i = 0; $i < $exam_num_qus; $i++) {
-    //             $question = Question::create([
-    //                 'question_content' => $request->input("question_content$counter"),
-    //                 'question_point' => $request->input("question_point$counter"),
-    //                 'question_options' => $request->input("question_options$counter"),
-    //                 'correct_answer' => $request->input("correct_answer$counter"),
-    //                 'exam_id' => $id,
-    //             ]);
-    //             $counter++;
-    //         }
-    //         return redirect('admin/exams')->with('success', 'Added successfully');
-    //     }
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  \App\Models\Exam  $exam
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show($id)
-    // {
-    //     $exam = Exam::findOrFail($id);
-    //     $questions = Question::where('exam_id', $id)->get();
-    //     return view('admin.show_exam', compact(['exam', 'questions']));
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  \App\Models\Exam  $exam
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit($id)
-    // {
-    //     $exam = Exam::findOrFail($id);
-    //     return view('admin.edit_exam', compact('exam'));
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \App\Http\Requests\UpdateExamRequest  $request
-    //  * @param  \App\Models\Exam  $exam
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function update(Request $request, $id)
-    // {
-    //     $counter = 1;
-    //     $request->validate([
-    //         'exam_name' => 'required',
-    //         'exam_desc' => 'required',
-    //         'exam_num_qus' => 'required|integer',
-    //         'exam_img' => 'mimes:jpg,png,jpeg|max:5048'
-    //     ]);
-
-    //     $exam_num_qus = $request->input('exam_num_qus');
-
-    //     if ($request->hasfile('image')) {
-    //         $newImageName = time() . '-' . $request->exam_name . '.' . $request->exam_img->extension();
-    //         $request->exam_img->move(public_path('img'), $newImageName);
-
-    //         $exam = Exam::where('id', $id)
-    //             ->update([
-    //                 'exam_name' => $request->input('exam_name'),
-    //                 'exam_desc' => $request->input('exam_desc'),
-    //                 'exam_num_qus' =>  $request->input('exam_num_qus'),
-    //                 'exam_img' => $newImageName,
-    //             ]);
-
-    //         for ($i = 0; $i < $exam_num_qus; $i++) {
-    //             $question = Question::where('exam_id', $id)
-    //                 ->update([
-    //                     'question_content' => $request->input("question_content$counter"),
-    //                     'question_point' => $request->input("question_point$counter"),
-    //                     'question_options' => $request->input("question_options$counter"),
-    //                     'correct_answer' => $request->input("correct_answer$counter"),
-    //                     'exam_id' => $id,
-    //                 ]);
-    //             $counter++;
-    //         }
-    //         return redirect('admin/exams')->with('success', 'Updated successfully');
-    //     } else {
-    //         $exam = Exam::where('id', $id)
-    //             ->update([
-    //                 'exam_name' => $request->input('exam_name'),
-    //                 'exam_desc' => $request->input('exam_desc'),
-    //                 'exam_num_qus' => $request->input('exam_num_qus'),
-    //             ]);
-
-    //         for ($i = 0; $i < $exam_num_qus; $i++) {
-    //             $question = Question::where('exam_id', $id)
-    //                 ->update([
-    //                     'question_content' => $request->input("question_content$counter"),
-    //                     'question_point' => $request->input("question_point$counter"),
-    //                     'question_options' => $request->input("question_options$counter"),
-    //                     'correct_answer' => $request->input("correct_answer$counter"),
-    //                     'exam_id' => $id,
-    //                 ]);
-    //             $counter++;
-    //         }
-    //         return redirect('admin/exams')->with('success', 'Updated successfully');
-    //     }
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  *
-    //  * @param  \App\Models\Exam  $exam
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function destroy($id)
-    // {
-    //     Exam::destroy($id);
-    //     return redirect('admin/exams')->with('success', 'Deleted successfully');
-    // }
+    public function destroy($id)
+    {
+        Game::destroy($id);
+        return redirect('admin/games')->with('success', 'Deleted successfully');
+    }
 }

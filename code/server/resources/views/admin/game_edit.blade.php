@@ -1,5 +1,5 @@
 @php
-$pageName = 'Manage Exams';
+$pageName = 'Manage Games';
 @endphp
 @extends('admin.layouts.admin')
 @section('content')
@@ -12,11 +12,11 @@ $pageName = 'Manage Exams';
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Edit {{ $exam->exam_name }} Quiz</h4>
+                <h4 class="card-title">Edit {{ $game->name }} Game</h4>
             </div>
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form form-vertical" method="POST" action="{{ route('admin.exams.update', $exam->id) }}"
+                    <form class="form form-vertical" method="POST" action="{{ route('admin.games.update', $game->id) }}"
                         enctype="multipart/form-data">
                         @csrf
                         @include('alerts.fail')
@@ -25,10 +25,10 @@ $pageName = 'Manage Exams';
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="first-name-icon">Quiz Name</label>
+                                        <label for="first-name-icon">Game Name</label>
                                         <div class="position-relative">
-                                            <input type="text" name="exam_name" class="form-control"
-                                                value="{{ $exam->exam_name }}" placeholder="Name" id="first-name-icon">
+                                            <input type="text" name="name" class="form-control"
+                                                value="{{ $game->name }}" placeholder="Name" id="first-name-icon">
                                             <div class="form-control-icon">
                                                 <i class="fas fa-book"></i>
                                             </div>
@@ -37,10 +37,61 @@ $pageName = 'Manage Exams';
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="email-id-icon">Quiz Descreption</label>
+                                        <label for="first-name-icon">Main Image</label>
                                         <div class="position-relative">
-                                            <input type="text" name="exam_desc" value="{{ $exam->exam_desc }}"
-                                                class="form-control" placeholder="Descreption" id="email-id-icon">
+                                            <input type="text" value="{{$game->main_image}}" name="main_image" class="form-control" placeholder="Name"
+                                                id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">Cover Image for Game</label>
+                                        <div class="position-relative">
+                                            <input type="text" value="{{$game->cover_image}}" name="cover_image" class="form-control" placeholder="cover_image"
+                                                id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">Images for Game</label>
+                                        <div class="position-relative">
+                                            <input type="text" value="{{$game->images}}" name="images" class="form-control" placeholder="Name"
+                                                id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">Category</label>
+                                        <div class="position-relative">
+                                            <select name="category" class="form-select form-control">
+                                                @foreach ($categories as $category)
+                                                <option @php $game->name == $category->name ?? selected @endphp value="{{$category->name}}">{{$category->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="email-id-icon">Tags</label>
+                                        <div class="position-relative">
+                                            <input type="text" value="{{$game->tags}}" name="tags" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
                                             <div class="form-control-icon">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </div>
@@ -49,85 +100,49 @@ $pageName = 'Manage Exams';
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="password-id-icon">Number of Questions</label>
+                                        <label for="email-id-icon">Current Division</label>
                                         <div class="position-relative">
-                                            <input type="number" value="{{ $exam->exam_num_qus }}" name="exam_num_qus"
-                                                class="form-control" placeholder="Number of Questions"
-                                                id="password-id-icon">
+                                            <input type="text" value="{{$game->currentDivision}}" name="currentDivision" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
                                             <div class="form-control-icon">
-                                                <i class="fas fa-th"></i>
+                                                <i class="fas fa-pencil-alt"></i>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                @php $counter=1; @endphp
-                                @foreach ($exam->questions as $item)
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Question {{ $counter }} Point</label>
-                                            <div class="position-relative">
-                                                <input type="text" value="{{ $item->question_point }}"
-                                                    name="question_point{{ $counter }}" class="form-control"
-                                                    placeholder="Question Point" id="email-id-icon">
-                                                <div class="form-control-icon">
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Question {{ $counter }}</label>
-                                            <div class="position-relative">
-                                                <textarea class="ckeditor" name="question_content{{ $counter }}"
-                                                    id="editor">
-                                                                {{ $item->question_content }}
-                                                            </textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Question {{ $counter }} Options</label>
-                                            <div class="position-relative">
-                                                <input type="text" value="{{ $item->question_options }}"
-                                                    name="question_options{{ $counter }}" class="form-control"
-                                                    placeholder="split it with ," id="email-id-icon">
-                                                <div class="form-control-icon">
-                                                    <i class="fas fa-cogs"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Correct Answer {{ $counter }}</label>
-                                            <div class="position-relative">
-                                                <input type="text" value="{{ $item->correct_answer }}"
-                                                    name="correct_answer{{ $counter }}" class="form-control"
-                                                    placeholder="Correct Answer" id="email-id-icon">
-                                                <div class="form-control-icon">
-                                                    <i class="fas fa-check"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @php $counter++; @endphp
-                                    <div
-                                        style="height: 10px; background-color:rgba(67,94,190,0.5); width:100%; margin:30px 0">
-                                    </div>
-                                @endforeach
                                 <div class="col-12 col-md-6">
                                     <div class="form-group has-icon-left">
-                                        <label for="password-id-icon">Image</label>
+                                        <label for="email-id-icon">Desired Division</label>
                                         <div class="position-relative">
-                                            <label for="image" style="position: relative;">
-                                                <img src="{{ asset("img/$exam->exam_img") }}" width='100' height="100"
-                                                    alt="profile_photo" style="cursor: pointer; object-fit:cover;">
-                                                <input type="file" id="image" name="exam_img" class="form-control d-none">
-                                                <img style="position: absolute; cursor: pointer; bottom:-10px; left:70%"
-                                                    src="{{ asset('img/plus.png') }}" width="50" height="50" alt="">
-                                            </label>
+                                            <input type="text" value="{{$game->desiredDivision}}" name="desiredDivision" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="email-id-icon">Price</label>
+                                        <div class="position-relative">
+                                            <input type="number" value="{{$game->price}}" name="price" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="email-id-icon">Discount</label>
+                                        <div class="position-relative">
+                                            <input type="number" value="{{$game->discount}}" name="discount" class="form-control"
+                                                placeholder="Descreption" id="email-id-icon">
+                                            <div class="form-control-icon">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

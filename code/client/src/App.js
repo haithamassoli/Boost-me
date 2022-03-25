@@ -6,8 +6,10 @@ import Login from "./Pages/Auth/Login";
 import Signup from "./Pages/Auth/Signup";
 import Game from "./Pages/Game";
 import Error from "./Pages/Error";
+import Cookies from "js-cookie";
 
 function App() {
+  console.log(Cookies.get("auth"));
   return (
     <div className="app bg-[ #11141d] text-white">
       <Navbar />
