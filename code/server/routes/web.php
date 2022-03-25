@@ -17,11 +17,11 @@ use App\Http\Controllers\CategoryController;
 */
 
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/', function () {
-    return view('auth.login');
-})->middleware('guest');
+// Route::get('/', function () {
+//     return view('auth.login');
+// })->middleware('guest');
 
 
 // for admin

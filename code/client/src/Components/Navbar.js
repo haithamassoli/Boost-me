@@ -63,25 +63,32 @@ function Navbar() {
           <div className="cursor-pointer  font-bold">DONATE</div>
           <div className="mr-4 cursor-pointer  font-bold">FAQ</div>
         </div>
-        <div className="hidden gap-5 md:flex">
+        <div className="hidden gap-3 md:flex">
           <div className="relative flex items-center justify-end">
             <input
               type="text"
-              className="rounded-2xl bg-black focus:border-0 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="rounded-2xl border-2 border-slate-600 bg-black py-1 focus:border-0 focus:outline-none focus:ring-2 focus:ring-green-400"
               name="search"
             />
-            <i className="fa-solid  fa-magnifying-glass absolute mr-3 text-slate-400"></i>
+            <i className="fa-solid fa-magnifying-glass absolute mr-3 text-slate-400"></i>
           </div>
-          <div className="mr-4 flex cursor-pointer items-center justify-center ">
-            <i className="fa-solid  fa-user mr-3"></i>
-            <Link to={"/login"}>SIGN IN</Link>
-            <div className="ml-3" onClick={logout}>
-              LOGOUT
+
+          <Link
+            to={"/login"}
+            className="group relative flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-[#3FB9BE]"
+          >
+            <i className="fa-solid fa-user flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-[#3FB9BE] p-4 "></i>
+            <div className="absolute -left-40 top-10 z-40 hidden w-48 items-center justify-center gap-4 rounded-2xl bg-black p-10 text-white group-hover:flex group-hover:flex-col">
+              <div className="hover:text-[#3FB9BE]">Login</div>
+              <div
+                className="flex cursor-pointer items-center justify-center hover:text-[#3FB9BE]"
+                onClick={logout}
+              >
+                Logout
+              </div>
+              <div className="hover:text-[#3FB9BE]">Signup</div>
             </div>
-          </div>
-          <div className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-green-400">
-            <i className="fa-brands fa-facebook-f flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-green-400 p-4 "></i>
-          </div>
+          </Link>
         </div>
       </nav>
       <header className="flex w-full items-center gap-5 overflow-x-scroll bg-green-300 px-2 py-2 font-semibold text-black scrollbar-hide md:justify-start md:px-16">

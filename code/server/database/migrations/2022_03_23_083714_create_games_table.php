@@ -21,8 +21,8 @@ return new class extends Migration
             $table->longText('images');
             $table->string('category');
             $table->longText('tags');
-            $table->integer('price');
-            $table->integer('discount')->default(0);
+            $table->float('price');
+            $table->float('discount')->default(0);
             $table->string('currentDivision');
             $table->string('desiredDivision');
             $table->timestamps();

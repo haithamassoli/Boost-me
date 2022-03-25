@@ -73,17 +73,17 @@ function Home() {
                 onClick={() => navigate(`/game/${game.id}/`)}
               >
                 <h4
-                  className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/60
+                  className="absolute top-2 left-2 z-10 rounded-2xl bg-slate-500/70
                               px-3 py-1 text-sm font-semibold text-white"
                 >
                   {game.tags}
                 </h4>
                 <img
-                  className="transition-opacity duration-500 group-hover:opacity-75"
+                  className="transition-opacity duration-500 group-hover:opacity-60"
                   src={game.cover_image}
                   alt={game.name}
                 />
-                <h3 className="absolute bottom-6 z-10 text-3xl font-semibold  text-white hover:text-green-400 group-hover:text-green-400">
+                <h3 className="absolute bottom-6 z-10 text-2xl font-semibold text-white  shadow-2xl hover:text-green-400 group-hover:text-green-400">
                   {game.name}
                 </h3>
               </div>

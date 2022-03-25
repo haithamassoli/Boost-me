@@ -20,7 +20,7 @@ function Game() {
   return (
     <div className="mt-10 px-10">
       <h1 className="mb-10 text-4xl">{game[0]?.name}</h1>
-      <div className="grid grid-cols-5 justify-around gap-5">
+      <div className="grid grid-cols-5 justify-center gap-5">
         <Swiper
           // effect="coverflow"
           // slidesOffsetAfter={20}
@@ -53,12 +53,14 @@ function Game() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="col-span-5 m-10 md:col-span-2 md:m-0 lg:m-5 xl:m-10">
-          <img src={game[0]?.cover_image} alt={game[0]?.name} />
+        <div className="col-span-5 m-10 md:col-span-2 md:m-0 lg:mx-5 lg:mb-5 xl:mx-10 xl:mb-10">
+          <div className="flex justify-center ">
+            <img src={game[0]?.main_image} alt={game[0]?.name} />
+          </div>
           <div className="mt-5 mb-3 flex items-center gap-3">
             {game[0]?.discount ? (
-              <div className="rounded-md bg-green-400 px-2 py-1 font-semibold text-black">
-                -${(+game[0]?.discount / +game[0]?.price) * 100}
+              <div className="rounded-md bg-[#3FB9BE] px-2 py-1 font-semibold text-black">
+                -%{Math.round((+game[0]?.discount / +game[0]?.price) * 100)}
               </div>
             ) : (
               ""
@@ -72,7 +74,7 @@ function Game() {
             </div>
             {game[0]?.discount ? (
               <div className="font-semibold">
-                ${+game[0]?.price - +game[0]?.discount}
+                ${(+game[0]?.price - +game[0]?.discount).toFixed(2)}
               </div>
             ) : (
               ""
@@ -196,7 +198,7 @@ function Game() {
                 <h4 className="mb-2 text-xl font-semibold">
                   Total Price: <span className="text-[#3FB9BE]">$50.33</span>
                 </h4>
-                <button className="w-full rounded-lg bg-green-300 px-4 py-2 text-xl font-semibold text-black">
+                <button className="w-full rounded-lg bg-[#3FB9BE] px-4 py-2 text-xl font-semibold text-black">
                   BOOST ME
                 </button>
               </div>
