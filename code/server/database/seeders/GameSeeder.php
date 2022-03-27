@@ -120,10 +120,130 @@ class GameSeeder extends Seeder
             "images" => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG_UDfrXsncdFD0XhlDKhVs979cGXVT_-lAw&usqp=CAU,https://media.pocketgamer.com/artwork/na-30672-1605595336/viber_image_2020-11-17_14-40-414_jpg_1280.jpg,https://img.redbull.com/images/q_auto,f_auto/redbullcom/2017/04/06/1331852802729_4/league-of-legends',
             'category' => 'PC',
             'tags' => 'STRATEGY',
-            'price' => 0,
-            'discount' => 0,
+            'price' => 10,
+            'discount' => 10,
             'currentDivision' => 'Iron I,Iron II,Iron III,Bronze I,Bronze II,Bronze III,Silver I,Silver II,Silver III,Gold I,Gold II,Gold III,Platinum I,Platinum II,Platinum III,Diamond I,Diamond II,Diamond III,Immortal I,Immortal II,Immortal III',
             'desiredDivision' => 'Iron I,Iron II,Iron III,Bronze I,Bronze II,Bronze III,Silver I,Silver II,Silver III,Gold I,Gold II,Gold III,Platinum I,Platinum II,Platinum III,Diamond I,Diamond II,Diamond III,Immortal I,Immortal II,Immortal III'
+        ]);
+        Game::create([
+            'name' => 'League of Legends: Wild Rift',
+            'cover_image' => 'https://play-lh.googleusercontent.com/HYbCzhAI27G_Hd2F-qPKHZJq6O7Xfrli6GjH-MPfCT5QeQdytUx_PxDE8idRqOn4lXQ=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'android',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'Genshin Impact',
+            'cover_image' => 'https://play-lh.googleusercontent.com/N4temUSSlAJJMcAwIYesN2g9vZ4QljGPC-pWHDFx8CMEAPdrbHvTr259q9G6EAQ083nj=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'android',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'Sky: Children of the Light',
+            'cover_image' => 'https://play-lh.googleusercontent.com/77buTKKgMf3svuVK-LXLoQtw3ATXE93LHG1Gu3Sp7rXBDda70mFwSQLkK9Bld9nPM44=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'android',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'Shadow of Death: Dark Knight',
+            'cover_image' => 'https://play-lh.googleusercontent.com/g0t9AT6_vSPCQ7NjvunlLcGumBWIqz1od2eedmL17pX_YWwGD9TJck-bAb10BmQ6Gcs=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'android',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'Cytus II',
+            'cover_image' => 'https://play-lh.googleusercontent.com/OWPLo_aeRocMDZH_V0VRa06XT642hwoUav3JjxXY3LCtb_qnWQuXjhZ1lKdT8Inz0yIL=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'android',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'DEEMO II',
+            'cover_image' => 'https://play-lh.googleusercontent.com/trnPbJ6P1G9tXM_y03KM-ODyq0wpIlmczUBvFi77p_9jFa_R1ov83Ya7wJP9oWSpMg=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'ios',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'Deemo',
+            'cover_image' => 'https://play-lh.googleusercontent.com/_As2vGjTdYMHQHy2OZ8J3npK0uqkw2aKBTcHUI5UvqXsuMO2cQHEsjzFfbYZeOf6HA=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'ios',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'Botworld Adventure',
+            'cover_image' => 'https://play-lh.googleusercontent.com/Ow49SushZUuIXCEEFvBGI_GXYVML9igkNFY3_bI-p07n5OppCC8rejYOvr9na--uWA=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'ios',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => "Alto's Odyssey",
+            'cover_image' => 'https://play-lh.googleusercontent.com/l4PdRz_ZURsgohnf9z-4uN2eLgnDTAZXPfcQVo7gNoqR4rYqI0Ed2BQVH51sa_KDNUU=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'ios',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
+        ]);
+        Game::create([
+            'name' => 'Orbia: Tap and Relax',
+            'cover_image' => 'https://play-lh.googleusercontent.com/Pbg5wU65MZJX7BgZDvz6Q_eiGQ4_7WRF8JZY7_FZskdRcU2n6Z9Z98kTlbvSFczrbGQ=s180-rw',
+            'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
+            'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
+            'category' => 'ios',
+            'tags' => 'ACTION',
+            'price' => 19.99,
+            'discount' => 10,
+            'currentDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III',
+            'desiredDivision' => 'Open I,Open II,Open III,Open IV,Contender I,Contender II,Contender III,Champion I,Champion II,Champion III'
         ]);
       
     }

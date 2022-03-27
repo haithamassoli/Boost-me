@@ -27,8 +27,8 @@ Route::post('signup', [App\Http\Controllers\api\AuthController::class, 'signup']
 Route::post('login', [App\Http\Controllers\api\AuthController::class, 'login']);
 
 
-Route::post('buy', [App\Http\Controllers\api\GamesController::class, 'buy']);
 Route::group(["middleware" => ["auth:sanctum"]], function(){
+    Route::post('buy', [App\Http\Controllers\api\GamesController::class, 'buy']);
     Route::post('logout', [App\Http\Controllers\api\AuthController::class, 'logout']);
    
 });

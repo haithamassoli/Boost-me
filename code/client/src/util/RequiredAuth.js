@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 function RequiredAuth({ children }) {
   const location = useLocation();
 
-  if (!Cookies.get("auth")) {
+  if (!Cookies.get("token")) {
     return <Navigate to={"/login"} state={{ path: location.pathname }} />;
   }
   return children;
@@ -13,7 +13,7 @@ function RequiredAuth({ children }) {
 export function NotRequiredAuth({ children }) {
   const location = useLocation();
 
-  if (!Cookies.get("auth")) {
+  if (!Cookies.get("token")) {
     return children;
   } else {
     return <Navigate to={"/"} state={{ path: location.pathname }} />;

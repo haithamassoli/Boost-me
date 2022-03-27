@@ -62,7 +62,7 @@ function Navbar() {
           <div className="group relative flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-[#3FB9BE]">
             <i className="fa-solid fa-user flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-[#3FB9BE] p-4 "></i>
             <div className="absolute -left-40 top-10 z-40 hidden w-48 items-center justify-center gap-4 rounded-2xl bg-black p-10 text-white group-hover:flex group-hover:flex-col">
-              {Cookies.get("auth") ? (
+              {Cookies.get("token") ? (
                 <div
                   className="flex cursor-pointer items-center justify-center hover:text-[#3FB9BE]"
                   onClick={logout}

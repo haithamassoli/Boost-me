@@ -4,6 +4,7 @@ import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Spinner from "../Components/Spinner/Spinner";
 import { Pagination, Navigation, Autoplay, EffectCoverflow } from "swiper";
+import Cookies from "js-cookie";
 
 function Game() {
   const { id } = useParams();
@@ -26,25 +27,13 @@ function Game() {
   }, [id]);
 
   const handleChange = (e) => {
-    let optionPrice = e.target.value;
+    let optionPrice = e.target.alt;
     console.log(e.target.checked);
     if (e.target.checked) {
       setTotalPrice((e) => (+e + +optionPrice).toFixed(2));
     } else {
       setTotalPrice((e) => (+e - +optionPrice).toFixed(2));
     }
-    // const newOption = option.map((item) => {
-    //   if (item.id === Number(name)) {
-    //     item.quantity = Number(value);
-    //   }
-    //   return item;
-    // });
-    // setOption(newOption);
-    // setTotalPrice(
-    //   newOption.reduce((total, item) => {
-    //     return total + item.price * item.quantity;
-    //   }, 0)
-    // );
   };
 
   const formSubmit = (e) => {
@@ -55,6 +44,9 @@ function Game() {
       method: "post",
       url: "http://127.0.0.1:8000/api/buy",
       data: formData,
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
     })
       .then((res) => {
         // if (res.data.errors[0]) {
@@ -62,7 +54,7 @@ function Game() {
         // } else {
         console.log(res);
         console.log(res.data);
-        // navigate("/", { replace: true });
+        navigate("/SuccessOrder", { replace: true });
         // }
       })
       .catch((err) => console.log(err.message));
@@ -107,7 +99,7 @@ function Game() {
           </Swiper>
           <form
             onSubmit={formSubmit}
-            className="col-span-5 m-10 md:col-span-2 md:m-0 lg:mx-5 lg:mb-5 xl:mx-10 xl:mb-10"
+            className="col-span-5 sm:m-10 md:col-span-2 md:m-0 lg:mx-5 lg:mb-5 xl:mx-10 xl:mb-10"
           >
             <div className="flex justify-center ">
               <img src={game[0]?.main_image} alt={game[0]?.name} />
@@ -234,7 +226,8 @@ function Game() {
                             type="checkbox"
                             id={e.option}
                             name={e.option}
-                            value={e.price}
+                            value={e.option}
+                            alt={e.price}
                             onChange={(e) => {
                               handleChange(e);
                             }}

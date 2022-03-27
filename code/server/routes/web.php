@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('games', GameController::class);
     Route::resource('categories', CategoryController::class);
+    Route::resource('orders', OrderController::class);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

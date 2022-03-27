@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Option;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -40,16 +41,18 @@ class GamesController extends Controller
         $game = Game::findOrFail($game_id);
         $game_price = ($game->price - $game->discount);
         $options = Option::all();
-        $requestData=[];
-        foreach ($all as $key => $value) {
-            array_push($requestData,[$key => $value]);
-        }
+  
         foreach ($options as $key => $value) {
             if (in_array($value->option, $all)) {
                 $game_price += $value->price;
             }
         }
-        return response([$all, number_format($game_price,2)]);
+        $order = Order::create([
+            'user_id' => Auth::user()->id,
+            'game_id' => $game_id,
+            'total_price' => number_format($game_price,2),
+        ]);
+        return response($order, 201);
         // $validator = Validator::make($request->all(), 
         // ['email' => 'email|required',
         // 'password' => 'required|min:8',] );

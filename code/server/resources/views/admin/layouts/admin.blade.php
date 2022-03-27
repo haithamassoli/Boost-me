@@ -63,13 +63,19 @@
                                 <span>Categories</span>
                             </a>
                         </li>
+                        <li class="sidebar-item @if ($pageName == 'Manage Orders') active @endif">
+                            <a href="/admin/orders" class='sidebar-link'>
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Orders</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item">
                             <a href="http://127.0.0.1:3000/" class='sidebar-link'>
                                 <i class="fas fa-clipboard-list"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        {{-- <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();                                                                                                   document.getElementById('logout-form').submit();">
                                        <i class="fas fa-sign-out-alt me-3"></i> {{ __('Logout') }}
@@ -78,7 +84,7 @@
                                         class="d-none">
                                         @csrf
                                     </form>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

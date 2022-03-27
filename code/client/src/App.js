@@ -5,10 +5,11 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
 import Signup from "./Pages/Auth/Signup";
 import Game from "./Pages/Game";
+import SuccessOrder from "./Pages/SuccessOrder";
 import Error from "./Pages/Error";
 import Spinner from "./Components/Spinner/Spinner";
 import { AuthProvider } from "./util/Auth";
-import { NotRequiredAuth } from "./util/RequiredAuth";
+import RequiredAuth, { NotRequiredAuth } from "./util/RequiredAuth";
 
 function App() {
   return (
@@ -36,6 +37,14 @@ function App() {
             />
             <Route path="/game/:id" element={<Game />} />
             <Route path="/spinner" element={<Spinner />} />
+            <Route
+              path="/spinner"
+              element={
+                <RequiredAuth>
+                  <SuccessOrder />
+                </RequiredAuth>
+              }
+            />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>

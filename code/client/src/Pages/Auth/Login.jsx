@@ -8,7 +8,6 @@ function Login() {
   const navigate = useNavigate();
   const auth = useAuth();
   const location = useLocation();
-
   const redirectPath = location.state?.path || "/";
 
   const [error, setError] = useState();
@@ -25,10 +24,10 @@ function Login() {
       data: formData,
     })
       .then((res) => {
-        if (res.data.errors[0]) {
+        if (res.data.errors) {
           setError(res.data.errors[0]);
         } else {
-          Cookies.set("auth", res.data.token, { expires: 30 });
+          Cookies.set("token", res.data.token, { expires: 30 });
           auth.login();
           navigate(redirectPath, { replace: true });
         }

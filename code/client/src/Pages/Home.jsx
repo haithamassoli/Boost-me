@@ -15,7 +15,10 @@ function Home() {
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/games/").then((res) => {
-      setGames(res.data);
+      const pcGames = res.data.filter((game) => {
+        return game.category === "PC";
+      });
+      setGames(pcGames);
       setComplateData(true);
     });
   }, []);
@@ -42,7 +45,7 @@ function Home() {
             // allowSlideNext={true}
             // grabCursor="true"
             // centeredSlides="true"
-            slidesPerView={2}
+            slidesPerView={1}
             spaceBetween={10}
             pagination={{
               // el: ".customized-swiper-pagination",
@@ -66,6 +69,9 @@ function Home() {
               },
               600: {
                 slidesPerView: 3,
+              },
+              400: {
+                slidesPerView: 2,
               },
             }}
             modules={[Pagination, Navigation, Autoplay, EffectCoverflow]}

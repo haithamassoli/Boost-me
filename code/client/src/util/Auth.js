@@ -8,11 +8,11 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(
-    Cookies.get("auth") ? true : false
+    Cookies.get("token") ? true : false
   );
 
   const login = () => {
-    setIsAuthenticated(Cookies.get("auth") ? true : false);
+    setIsAuthenticated(Cookies.get("token") ? true : false);
   };
 
   const logout = () => {
@@ -20,13 +20,13 @@ export const AuthProvider = ({ children }) => {
       method: "post",
       url: "http://127.0.0.1:8000/api/logout",
       headers: {
-        Authorization: `Bearer ${Cookies.get("auth")}`,
+        Authorization: `Bearer ${Cookies.get("token")}`,
       },
     })
       .then((res) => {
         console.log(res.data);
-        setIsAuthenticated(Cookies.get("auth") ? true : false);
-        Cookies.remove("auth");
+        setIsAuthenticated(Cookies.get("token") ? true : false);
+        Cookies.remove("token");
         navigate("/");
       })
       .catch((err) => {

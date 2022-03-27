@@ -26,10 +26,10 @@ function Signup() {
       data: formData,
     })
       .then((res) => {
-        if (res.data.errors[0]) {
+        if (res.data.errors) {
           setError(res.data.errors[0]);
         } else {
-          Cookies.set("auth", res.data.token, { expires: 30 });
+          Cookies.set("token", res.data.token, { expires: 30 });
           auth.login();
           navigate(redirectPath, { replace: true });
         }

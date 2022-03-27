@@ -30,6 +30,13 @@ function MobileGames({ system }) {
       setGames(systemGame);
     });
   }, []);
+
+  useEffect(() => {
+    if (windowDimensions >= 778) {
+      setGames(games.splice(1));
+    }
+  }, [windowDimensions]);
+
   return (
     <div className="mt-4">
       <div className="flex items-center justify-between px-2 text-xl font-semibold text-white md:px-10">
@@ -52,18 +59,9 @@ function MobileGames({ system }) {
           />
         </h4>
       </div>
-      <div className="mt-5 grid grid-cols-2 px-4 md:grid-cols-3 md:px-20 lg:grid-cols-4  xl:grid-cols-5">
-        {games
-          .slice(
-            windowDimensions >= 1000
-              ? (0, 5)
-              : windowDimensions >= 600
-              ? (0, 4)
-              : windowDimensions >= 400
-              ? (0, 3)
-              : (0, 2)
-          )
-          .map((game) => {
+      <div className="mt-5 grid grid-cols-2 gap-4 px-4 md:grid-cols-3 md:px-20 lg:grid-cols-4 xl:grid-cols-5">
+        {games?.map((game) => {
+          return (
             <div key={game.id}>
               <div className="flex cursor-pointer">
                 <img
@@ -72,15 +70,15 @@ function MobileGames({ system }) {
                   alt={game.name}
                 />
                 <div>
-                  <h5>{game.name}</h5>
+                  <h5 className="break-all">{game.name}</h5>
                   <p>{game.tags}</p>
                   <div className="flex items-center justify-between">
                     <div>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
+                      <i className="fa-regular  fa-star text-sm"></i>
+                      <i className="fa-regular  fa-star text-sm"></i>
+                      <i className="fa-regular  fa-star text-sm"></i>
+                      <i className="fa-regular  fa-star text-sm"></i>
+                      <i className="fa-regular  fa-star text-sm"></i>
                     </div>
                     {system === "ios" ? (
                       <i className="fa-brands fa-apple ml-3 mr-2 text-green-400"></i>
@@ -90,8 +88,9 @@ function MobileGames({ system }) {
                   </div>
                 </div>
               </div>
-            </div>;
-          })}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
