@@ -9,6 +9,7 @@ function getWindowDimensions() {
   };
 }
 function MobileGames({ system }) {
+  const navigate = useNavigate();
   const [games, setGames] = useState([]);
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
@@ -62,7 +63,7 @@ function MobileGames({ system }) {
       <div className="mt-5 grid grid-cols-2 gap-4 px-4 md:grid-cols-3 md:px-20 lg:grid-cols-4 xl:grid-cols-5">
         {games?.map((game) => {
           return (
-            <div key={game.id}>
+            <div onClick={() => navigate(`/game/${game.id}/`)} key={game.id}>
               <div className="flex cursor-pointer">
                 <img
                   className="mr-3 h-16 w-16"

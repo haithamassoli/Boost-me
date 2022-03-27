@@ -38,7 +38,7 @@ function App() {
             <Route path="/game/:id" element={<Game />} />
             <Route path="/spinner" element={<Spinner />} />
             <Route
-              path="/spinner"
+              path="/successorder"
               element={
                 <RequiredAuth>
                   <SuccessOrder />

@@ -51,7 +51,7 @@ $pageName = 'Manage Games';
                             @foreach ($games as $game)
                                 <tr>
                                     <td>{{ $game->id }}</td>
-                                    <td><div class="d-flex align-items-center"><img  class="avatar me-2" style="object-fit: cover" width="50" height="50" src="{{$game->cover_image}}" alt="{{$game->name}}">{{ $game->name }}</div></td>
+                                    <td><div class="d-flex align-items-center"><img  class="avatar me-2" style="object-fit: cover" width="50" height="50" src="{{$game->main_image}}" alt="{{$game->name}}">{{ $game->name }}</div></td>
                                     <td>{{ $game->category }}</td>
                                     <td>{{ $game->tags }}</td>
                                     <td>${{ $game->price }}</td>
@@ -59,7 +59,7 @@ $pageName = 'Manage Games';
                                     <td>{{ $game->currentDivision }}</td>
                                     <td>{{ $game->desiredDivision }}</td>
                                     <td>
-                                        <img src={{$game->cover_image}} alt={{$game->name}}>
+                                        <img class="me-2" style="object-fit: cover" width="50" height="50" src={{$game->cover_image}} alt={{$game->name}}>
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center"> 

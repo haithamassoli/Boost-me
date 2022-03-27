@@ -49,13 +49,11 @@ function Game() {
       },
     })
       .then((res) => {
-        // if (res.data.errors[0]) {
-        //   setError(res.data.errors[0]);
-        // } else {
-        console.log(res);
-        console.log(res.data);
-        navigate("/SuccessOrder", { replace: true });
-        // }
+        if (res.data.errors) {
+          navigate("/login");
+        } else {
+          navigate("/successorder", { replace: true });
+        }
       })
       .catch((err) => console.log(err.message));
   };
