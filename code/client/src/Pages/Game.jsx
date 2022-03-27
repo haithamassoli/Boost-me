@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Spinner from "../Components/Spinner/Spinner";
@@ -7,13 +7,16 @@ import { Pagination, Navigation, Autoplay, EffectCoverflow } from "swiper";
 
 function Game() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [game, setGame] = useState([]);
   const [option, setOption] = useState([]);
   const [complateData, setComplateData] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     axios.get(`http://127.0.0.1:8000/api/game/${id}`).then((res) => {
       setGame(res.data);
+      setTotalPrice(+(+res.data[0]?.price - +res.data[0]?.discount).toFixed(2));
     });
 
     axios.get(`http://127.0.0.1:8000/api/option`).then((res) => {
@@ -21,6 +24,49 @@ function Game() {
       setComplateData(true);
     });
   }, [id]);
+
+  const handleChange = (e) => {
+    let optionPrice = e.target.value;
+    console.log(e.target.checked);
+    if (e.target.checked) {
+      setTotalPrice((e) => (+e + +optionPrice).toFixed(2));
+    } else {
+      setTotalPrice((e) => (+e - +optionPrice).toFixed(2));
+    }
+    // const newOption = option.map((item) => {
+    //   if (item.id === Number(name)) {
+    //     item.quantity = Number(value);
+    //   }
+    //   return item;
+    // });
+    // setOption(newOption);
+    // setTotalPrice(
+    //   newOption.reduce((total, item) => {
+    //     return total + item.price * item.quantity;
+    //   }, 0)
+    // );
+  };
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    let formData = new FormData(e.target);
+
+    axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/api/buy",
+      data: formData,
+    })
+      .then((res) => {
+        // if (res.data.errors[0]) {
+        //   setError(res.data.errors[0]);
+        // } else {
+        console.log(res);
+        console.log(res.data);
+        // navigate("/", { replace: true });
+        // }
+      })
+      .catch((err) => console.log(err.message));
+  };
   return (
     <>
       {complateData === false ? <Spinner /> : ""}
@@ -59,7 +105,10 @@ function Game() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="col-span-5 m-10 md:col-span-2 md:m-0 lg:mx-5 lg:mb-5 xl:mx-10 xl:mb-10">
+          <form
+            onSubmit={formSubmit}
+            className="col-span-5 m-10 md:col-span-2 md:m-0 lg:mx-5 lg:mb-5 xl:mx-10 xl:mb-10"
+          >
             <div className="flex justify-center ">
               <img src={game[0]?.main_image} alt={game[0]?.name} />
             </div>
@@ -109,6 +158,7 @@ function Game() {
                       className="form-select focus:text-white-700 w-full cursor-pointer bg-[#080F28] px-4 py-5 pb-2 font-normal
                             text-white
                             focus:border-green-300 focus:outline-none"
+                      name="currentDivision"
                     >
                       {game[0]?.currentDivision.split(",").map((e, index) => (
                         <option key={index} value={e}>
@@ -125,7 +175,7 @@ function Game() {
                      border-[#232b46]
                      after:absolute after:top-1 after:left-[75px]
                      after:text-[15px]
-                     after:text-[#979aae] after:content-['Current-Division']"
+                     after:text-[#979aae] after:content-['Desired-Division']"
                   >
                     <img
                       className="h-[60px] border-r-2 border-[#232b46] object-contain p-2"
@@ -136,6 +186,7 @@ function Game() {
                       className="form-select focus:text-white-700 w-full cursor-pointer bg-[#080F28] px-4 py-5 pb-2 font-normal
                     text-white
                     focus:border-green-300 focus:outline-none"
+                      name="desiredDivision"
                     >
                       {game[0]?.desiredDivision.split(",").map((e, index) => (
                         <option key={index} value={e}>
@@ -147,24 +198,23 @@ function Game() {
                 </div>
                 <div className="mt-5 grid grid-cols-1 items-center justify-center gap-3 lg:grid-cols-2">
                   {option?.map((e, index) => (
-                    <label
+                    <div
                       key={index}
                       className="form-check-label
-                   group relative inline-block
-                    text-white after:absolute
-                    after:top-0 after:right-0
-                    after:flex after:h-5
-                    after:w-1 after:items-center 
-                    after:justify-center after:rounded-tr-md
-                    after:rounded-bl-md
-                    after:border-2
-                    after:border-green-500/20
-                    after:bg-[#3FB9BE] 
-                    after:px-2 after:text-[13px]
-                    after:font-bold 
-                    after:text-black 
-                    after:content-['i']"
-                      htmlFor="inlineCheckbox1"
+                        group relative inline-block
+                        text-white after:absolute
+                        after:top-0 after:right-0
+                        after:flex after:h-5
+                        after:w-1 after:items-center 
+                        after:justify-center after:rounded-tr-md
+                        after:rounded-bl-md
+                        after:border-2
+                        after:border-green-500/20
+                        after:bg-[#3FB9BE] 
+                        after:px-2 after:text-[13px]
+                        after:font-bold 
+                        after:text-black 
+                        after:content-['i']"
                     >
                       <div className="z-100 absolute -right-10 -top-52 hidden w-48 rounded-xl bg-black p-5 group-hover:block">
                         <div>
@@ -177,40 +227,51 @@ function Game() {
                         </div>
                         <p className="text-sm">{e.description}</p>
                       </div>
-                      <div className="form-check form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 py-3 px-2">
-                        <input
-                          className="form-check-input float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-black bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-green-300 checked:bg-green-300 focus:outline-none"
-                          type="checkbox"
-                          id="inlineCheckbox1"
-                          value="option1"
-                        />
-                        {e.option}
-                        <span
-                          className={
-                            e.tags === null && e.price === 0
-                              ? "ml-3 rounded-xl bg-blue-500 px-2 text-sm font-semibold"
-                              : e.tags === null && e.price !== 0
-                              ? ""
-                              : "ml-3 rounded-xl bg-red-500 px-2 text-sm font-semibold"
-                          }
-                        >
-                          {e.tags === null && e.price === 0 ? "Free" : e.tags}
-                        </span>
-                      </div>
-                    </label>
+                      <label>
+                        <div className="form-check form-check-inline cursor-pointer rounded-lg border border-gray-600 bg-slate-800 py-3 px-2">
+                          <input
+                            className="form-check-input float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-black bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-green-300 checked:bg-green-300 focus:outline-none"
+                            type="checkbox"
+                            id={e.option}
+                            name={e.option}
+                            value={e.price}
+                            onChange={(e) => {
+                              handleChange(e);
+                            }}
+                          />
+                          {e.option}
+                          <span
+                            className={
+                              e.tags === null && e.price === 0
+                                ? "ml-3 rounded-xl bg-blue-500 px-2 text-sm font-semibold"
+                                : e.tags === null && e.price !== 0
+                                ? ""
+                                : "ml-3 rounded-xl bg-red-500 px-2 text-sm font-semibold"
+                            }
+                          >
+                            {e.tags === null && e.price === 0 ? "Free" : e.tags}
+                          </span>
+                        </div>
+                      </label>
+                    </div>
                   ))}
                 </div>
+                <input type="hidden" name="game_id" value={id} />
                 <div className="mt-5  w-full items-center justify-center">
                   <h4 className="mb-2 text-xl font-semibold">
-                    Total Price: <span className="text-[#3FB9BE]">$50.33</span>
+                    Total Price:
+                    <span className="text-[#3FB9BE]">${totalPrice}</span>
                   </h4>
-                  <button className="w-full rounded-lg bg-[#3FB9BE] px-4 py-2 text-xl font-semibold text-black">
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg bg-[#3FB9BE] px-4 py-2 text-xl font-semibold text-black"
+                  >
                     BOOST ME
                   </button>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </>

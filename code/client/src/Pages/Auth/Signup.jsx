@@ -24,12 +24,6 @@ function Signup() {
       method: "post",
       url: "http://127.0.0.1:8000/api/signup",
       data: formData,
-      config: {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      },
     })
       .then((res) => {
         if (res.data.errors[0]) {

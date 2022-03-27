@@ -41,7 +41,7 @@ function Home() {
             // slidesOffsetAfter={20}
             // allowSlideNext={true}
             // grabCursor="true"
-            centeredSlides="true"
+            // centeredSlides="true"
             slidesPerView={2}
             spaceBetween={10}
             pagination={{
