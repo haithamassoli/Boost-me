@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../../util/Auth";
 import axios from "axios";
 import Cookies from "js-cookie";
 
 function Signup() {
   const navigate = useNavigate();
+  const auth = useAuth();
+  const location = useLocation();
 
+  const redirectPath = location.state?.path || "/";
+
+  const [error, setError] = useState();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,19 +20,27 @@ function Signup() {
 
   const formSubmit = (e) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.password) {
-      axios({
-        method: "post",
-        url: "http://127.0.0.1:8000/api/signup",
-        data: formData,
-      })
-        .then((res) => {
-          console.log(res.data);
+    axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/api/signup",
+      data: formData,
+      config: {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      },
+    })
+      .then((res) => {
+        if (res.data.errors[0]) {
+          setError(res.data.errors[0]);
+        } else {
           Cookies.set("auth", res.data.token, { expires: 30 });
-          navigate("/");
-        })
-        .catch((err) => console.log(err));
-    }
+          auth.login();
+          navigate(redirectPath, { replace: true });
+        }
+      })
+      .catch((err) => console.log(err.message));
   };
 
   return (
@@ -85,6 +99,11 @@ function Signup() {
                       <small>Or sign up with credentials</small>
                     </div>
                     <form onSubmit={formSubmit}>
+                      {error && (
+                        <div className="mb-3 w-full rounded-2xl bg-red-400 p-4 text-center text-black">
+                          {error}
+                        </div>
+                      )}
                       <div className="relative mb-3 w-full">
                         <label
                           className="mb-2 block text-xs font-bold uppercase text-gray-700"

@@ -6,24 +6,42 @@ import Login from "./Pages/Auth/Login";
 import Signup from "./Pages/Auth/Signup";
 import Game from "./Pages/Game";
 import Error from "./Pages/Error";
-import Cookies from "js-cookie";
+import Spinner from "./Components/Spinner/Spinner";
+import { AuthProvider } from "./util/Auth";
+import { NotRequiredAuth } from "./util/RequiredAuth";
 
 function App() {
-  console.log(Cookies.get("auth"));
   return (
-    <div className="app bg-[ #11141d] text-white">
-      <Navbar />
-      <Routes>
-        <Route>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/game/:id" element={<Game />} />
-          <Route path="*" element={<Error />} />
-        </Route>
-      </Routes>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="app bg-[ #11141d] text-white">
+        <Navbar />
+        <Routes>
+          <Route>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/login"
+              element={
+                <NotRequiredAuth>
+                  <Login />
+                </NotRequiredAuth>
+              }
+            />
+            <Route
+              path="/signup"
+              element={
+                <NotRequiredAuth>
+                  <Signup />
+                </NotRequiredAuth>
+              }
+            />
+            <Route path="/game/:id" element={<Game />} />
+            <Route path="/spinner" element={<Spinner />} />
+            <Route path="*" element={<Error />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 

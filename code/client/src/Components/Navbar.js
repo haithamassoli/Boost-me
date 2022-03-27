@@ -1,28 +1,14 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import { useAuth } from "../util/Auth";
 import Cookies from "js-cookie";
 
 function Navbar() {
-  const navigate = useNavigate();
+  const auth = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   const logout = () => {
-    axios({
-      method: "post",
-      url: "http://127.0.0.1:8000/api/logout",
-      headers: {
-        Authorization: `Bearer ${Cookies.get("auth")}`,
-      },
-    })
-      .then((res) => {
-        console.log(res.data);
-        Cookies.remove("auth");
-        navigate("/");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    auth.logout();
   };
   return (
     <>
@@ -73,22 +59,28 @@ function Navbar() {
             <i className="fa-solid fa-magnifying-glass absolute mr-3 text-slate-400"></i>
           </div>
 
-          <Link
-            to={"/login"}
-            className="group relative flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-[#3FB9BE]"
-          >
+          <div className="group relative flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-full text-black ring-1 ring-[#3FB9BE]">
             <i className="fa-solid fa-user flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-[#3FB9BE] p-4 "></i>
             <div className="absolute -left-40 top-10 z-40 hidden w-48 items-center justify-center gap-4 rounded-2xl bg-black p-10 text-white group-hover:flex group-hover:flex-col">
-              <div className="hover:text-[#3FB9BE]">Login</div>
-              <div
-                className="flex cursor-pointer items-center justify-center hover:text-[#3FB9BE]"
-                onClick={logout}
-              >
-                Logout
-              </div>
-              <div className="hover:text-[#3FB9BE]">Signup</div>
+              {Cookies.get("auth") ? (
+                <div
+                  className="flex cursor-pointer items-center justify-center hover:text-[#3FB9BE]"
+                  onClick={logout}
+                >
+                  Logout
+                </div>
+              ) : (
+                <>
+                  <Link to={"/signup"} className="hover:text-[#3FB9BE]">
+                    Signup
+                  </Link>
+                  <Link to={"/login"} className="hover:text-[#3FB9BE]">
+                    Login
+                  </Link>
+                </>
+              )}
             </div>
-          </Link>
+          </div>
         </div>
       </nav>
       <header className="flex w-full items-center gap-5 overflow-x-scroll bg-green-300 px-2 py-2 font-semibold text-black scrollbar-hide md:justify-start md:px-16">
