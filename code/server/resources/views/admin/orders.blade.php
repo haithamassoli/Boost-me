@@ -32,6 +32,7 @@ $pageName = 'Manage Orders';
                             <tr>
                                 <th>#</th>
                                 <th>User Name</th>
+                                <th>Game</th>
                                 <th>Price</th>
                                 <th>Adjustments</th>
                             </tr>
@@ -41,6 +42,7 @@ $pageName = 'Manage Orders';
                                 <tr>
                                     <td>{{ $order->id }}</td>
                                     <td>{{ $order->user_id }}</td>
+                                    <td>{{ $order->game_id }}</td>
                                     <td>{{ $order->total_price }}</td>
                                     <td>
                                         <form style="display: inline-block" method="POST"

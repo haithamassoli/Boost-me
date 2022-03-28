@@ -18,15 +18,15 @@ use App\Http\Controllers\CategoryController;
 */
 
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/', function () {
-//     return view('auth.login');
-// })->middleware('guest');
+Route::get('/', function () {
+    return view('auth.login');
+})->middleware('guest');
 
 
 // for admin
-Route::name('admin.')->prefix('admin')->group(function () {
+Route::name('admin.')->prefix('admin')->middleware(["auth", "role"])->group(function () {
     Route::get('/', function () {
         return view('admin.index');
     })->name('dashboard');

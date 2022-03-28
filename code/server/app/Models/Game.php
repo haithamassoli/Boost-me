@@ -15,6 +15,10 @@ class Game extends Model
     {
         return $this->hasMany(UserGame::class);
     }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 
     public function categories()
     {
