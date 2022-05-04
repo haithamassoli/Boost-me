@@ -127,7 +127,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'League of Legends: Wild Rift',
-            'cover_image' => 'https://play-lh.googleusercontent.com/HYbCzhAI27G_Hd2F-qPKHZJq6O7Xfrli6GjH-MPfCT5QeQdytUx_PxDE8idRqOn4lXQ=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/HYbCzhAI27G_Hd2F-qPKHZJq6O7Xfrli6GjH-MPfCT5QeQdytUx_PxDE8idRqOn4lXQ',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'android',
@@ -139,7 +139,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'Genshin Impact',
-            'cover_image' => 'https://play-lh.googleusercontent.com/N4temUSSlAJJMcAwIYesN2g9vZ4QljGPC-pWHDFx8CMEAPdrbHvTr259q9G6EAQ083nj=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/N4temUSSlAJJMcAwIYesN2g9vZ4QljGPC-pWHDFx8CMEAPdrbHvTr259q9G6EAQ083nj',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'android',
@@ -151,7 +151,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'Sky: Children of the Light',
-            'cover_image' => 'https://play-lh.googleusercontent.com/77buTKKgMf3svuVK-LXLoQtw3ATXE93LHG1Gu3Sp7rXBDda70mFwSQLkK9Bld9nPM44=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/77buTKKgMf3svuVK-LXLoQtw3ATXE93LHG1Gu3Sp7rXBDda70mFwSQLkK9Bld9nPM44',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'android',
@@ -163,7 +163,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'Shadow of Death: Dark Knight',
-            'cover_image' => 'https://play-lh.googleusercontent.com/g0t9AT6_vSPCQ7NjvunlLcGumBWIqz1od2eedmL17pX_YWwGD9TJck-bAb10BmQ6Gcs=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/g0t9AT6_vSPCQ7NjvunlLcGumBWIqz1od2eedmL17pX_YWwGD9TJck-bAb10BmQ6Gcs',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'android',
@@ -175,7 +175,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'Cytus II',
-            'cover_image' => 'https://play-lh.googleusercontent.com/OWPLo_aeRocMDZH_V0VRa06XT642hwoUav3JjxXY3LCtb_qnWQuXjhZ1lKdT8Inz0yIL=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/OWPLo_aeRocMDZH_V0VRa06XT642hwoUav3JjxXY3LCtb_qnWQuXjhZ1lKdT8Inz0yIL',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'android',
@@ -187,7 +187,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'DEEMO II',
-            'cover_image' => 'https://play-lh.googleusercontent.com/trnPbJ6P1G9tXM_y03KM-ODyq0wpIlmczUBvFi77p_9jFa_R1ov83Ya7wJP9oWSpMg=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/trnPbJ6P1G9tXM_y03KM-ODyq0wpIlmczUBvFi77p_9jFa_R1ov83Ya7wJP9oWSpMg',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'ios',
@@ -199,7 +199,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'Deemo',
-            'cover_image' => 'https://play-lh.googleusercontent.com/_As2vGjTdYMHQHy2OZ8J3npK0uqkw2aKBTcHUI5UvqXsuMO2cQHEsjzFfbYZeOf6HA=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/_As2vGjTdYMHQHy2OZ8J3npK0uqkw2aKBTcHUI5UvqXsuMO2cQHEsjzFfbYZeOf6HA',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'ios',
@@ -211,7 +211,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'Botworld Adventure',
-            'cover_image' => 'https://play-lh.googleusercontent.com/Ow49SushZUuIXCEEFvBGI_GXYVML9igkNFY3_bI-p07n5OppCC8rejYOvr9na--uWA=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/Ow49SushZUuIXCEEFvBGI_GXYVML9igkNFY3_bI-p07n5OppCC8rejYOvr9na--uWA',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'ios',
@@ -223,7 +223,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => "Alto's Odyssey",
-            'cover_image' => 'https://play-lh.googleusercontent.com/l4PdRz_ZURsgohnf9z-4uN2eLgnDTAZXPfcQVo7gNoqR4rYqI0Ed2BQVH51sa_KDNUU=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/l4PdRz_ZURsgohnf9z-4uN2eLgnDTAZXPfcQVo7gNoqR4rYqI0Ed2BQVH51sa_KDNUU',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'ios',
@@ -235,7 +235,7 @@ class GameSeeder extends Seeder
         ]);
         Game::create([
             'name' => 'Orbia: Tap and Relax',
-            'cover_image' => 'https://play-lh.googleusercontent.com/Pbg5wU65MZJX7BgZDvz6Q_eiGQ4_7WRF8JZY7_FZskdRcU2n6Z9Z98kTlbvSFczrbGQ=s180-rw',
+            'cover_image' => 'https://play-lh.googleusercontent.com/Pbg5wU65MZJX7BgZDvz6Q_eiGQ4_7WRF8JZY7_FZskdRcU2n6Z9Z98kTlbvSFczrbGQ',
             'main_image' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-ic1-400x400-82b90aa9a275.png?h=270&resize=1&w=480',
             'images' => 'https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-04-02-24-22-1920x1080-e44528f4fa16.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-05-02-24-22-1920x1080-4dd0bff6a6c0.jpg,https://cdn2.unrealengine.com/egs-cyberpunk2077-cdprojektred-g1a-15-02-24-22-1920x1080-16b1ecf631c4.jpg',
             'category' => 'ios',
